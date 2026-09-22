@@ -2748,7 +2748,7 @@
   max-width: 16ch;
 }
 
-/* Empty state (Réalisations, Actualités, section équipe About) */
+/* Empty state (Réalisations, section équipe About) */
 .empty-state-section { padding: 4rem 0 6rem; }
 .empty-state {
   padding: clamp(2.5rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3rem);

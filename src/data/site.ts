@@ -28,7 +28,6 @@ export const navLinks = [
   { label: 'À propos', to: '/a-propos' },
   { label: 'Services', to: '/services' },
   { label: 'Réalisations', to: '/realisations' },
-  { label: 'Actualités', to: '/actualites' },
   { label: 'Rejoignez-nous', to: '/rejoignez-nous' },
   { label: 'Contact', to: '/contact' },
 ];
