@@ -4,7 +4,7 @@ export const site = {
   baseline: 'Mécanique · Tuyauterie · Chaudronnerie · Ingénierie',
   tagline: 'La soudure industrielle et maritime en Côte d’Ivoire.',
   subline:
-    'S.I.M sarl accompagne les acteurs industriels et maritimes de Côte d’Ivoire dans leurs projets de tuyauterie, chaudronnerie, usinage, onshore/offshore, naval et logistique.',
+    'S.I.M sarl accompagne les acteurs industriels et maritimes de Côte d’Ivoire dans leurs projets de tuyauterie, chaudronnerie, usinage, onshore/offshore, naval, échangeur & aéro et logistique.',
   region: 'Abidjan, Côte d’Ivoire',
   contact: {
     phone1: '+225 27 21 74 50 61',
@@ -13,7 +13,7 @@ export const site = {
     email: 'simsoudure@gmail.com',
     emailSecretariat: 'secretariat@sim.ci',
     web: 'www.sim.ci',
-    address: 'Koumassi Barradji, quartier 3 ampoules 01 · B.P 587 · Abidjan 01',
+    address: 'Koumassi Barradji, quartier 3 ampoules · 01 B.P 587 · Abidjan 01',
     city: 'Koumassi — Abidjan',
     country: 'Côte d’Ivoire',
   },
@@ -28,6 +28,7 @@ export const navLinks = [
   { label: 'À propos', to: '/a-propos' },
   { label: 'Services', to: '/services' },
   { label: 'Réalisations', to: '/realisations' },
-  { label: 'Partenaires', to: '/partenaires' },
+  { label: 'Actualités', to: '/actualites' },
+  { label: 'Rejoignez-nous', to: '/rejoignez-nous' },
   { label: 'Contact', to: '/contact' },
 ];

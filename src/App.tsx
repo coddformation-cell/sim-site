@@ -1,24 +1,19 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
-import Lenis from 'lenis';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Header from './layout/Header';
 import Footer from './layout/Footer';
 import Home from './pages/Home';
+import APropos from './pages/APropos';
 import Services from './pages/Services';
 import ServiceDetail from './pages/ServiceDetail';
 import Projets from './pages/Projets';
-import ProjectDetail from './pages/ProjectDetail';
-import Partenaires from './pages/Partenaires';
-import APropos from './pages/APropos';
+import Actualites from './pages/Actualites';
+import RejoignezNous from './pages/RejoignezNous';
 import Contact from './pages/Contact';
 import './App.css';
 
-gsap.registerPlugin(ScrollTrigger);
-
 const REVEAL_SELECTOR =
-  '[data-reveal], .section-head, .home-service-card, .home-project-card, .services-alt-row, .project-card, .testimonial-card, .about-value, .process-step, .figure-item, .partner-item, .project-gallery-item, .project-block';
+  '[data-reveal], .section-head, .home-service-card, .services-alt-row, .value-card, .service-cover, .empty-state';
 
 function RouteScrollReset() {
   const { pathname } = useLocation();
@@ -66,8 +61,8 @@ function AppShell() {
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServiceDetail />} />
           <Route path="/realisations" element={<Projets />} />
-          <Route path="/realisations/:slug" element={<ProjectDetail />} />
-          <Route path="/partenaires" element={<Partenaires />} />
+          <Route path="/actualites" element={<Actualites />} />
+          <Route path="/rejoignez-nous" element={<RejoignezNous />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
@@ -78,23 +73,6 @@ function AppShell() {
 }
 
 function App() {
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    });
-
-    lenis.on('scroll', ScrollTrigger.update);
-    const raf = (time: number) => lenis.raf(time * 1000);
-    gsap.ticker.add(raf);
-    gsap.ticker.lagSmoothing(0);
-
-    return () => {
-      gsap.ticker.remove(raf);
-      lenis.destroy();
-    };
-  }, []);
-
   return (
     <BrowserRouter>
       <AppShell />

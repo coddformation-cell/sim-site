@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { services } from '../data/services';
+import ServiceCover from '../components/ServiceCover';
 
 export default function ServicesAlternating() {
   return (
@@ -11,9 +12,8 @@ export default function ServicesAlternating() {
               key={s.id}
               className={`services-alt-row ${i % 2 === 1 ? 'is-reverse' : ''}`}
             >
-              <div className="services-alt-media">
-                <img src={s.image} alt="" loading="lazy" />
-                <span className="services-alt-index mono">{s.index}</span>
+              <div className="services-alt-media services-alt-media-cover">
+                <ServiceCover index={s.index} title={s.title} />
               </div>
               <div className="services-alt-body">
                 <h3 className="services-alt-title">{s.title}</h3>

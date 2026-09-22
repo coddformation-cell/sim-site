@@ -12,14 +12,14 @@ export default function Footer() {
           <Logo />
           <p>
             Soudure Industrielle & Maritime — Tuyauterie, Chaudronnerie, Usinage,
-            Onshore/Offshore, Naval et Logistique en Côte d’Ivoire.
+            Onshore/Offshore, Naval, Échangeur & Aéro et Logistique en Côte d’Ivoire.
           </p>
           <ul className="footer-locations" role="list">
             <li>
               <span className="mono">Siège</span> {site.contact.address}
             </li>
             <li>
-              <span className="mono">Tel</span> {site.contact.phone1}
+              <span className="mono">Tél</span> {site.contact.phone1}
             </li>
           </ul>
         </div>
@@ -38,7 +38,7 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Services</h4>
           <ul>
-            {services.slice(0, 6).map((s) => (
+            {services.map((s) => (
               <li key={s.id}>
                 <Link to={`/services/${s.slug}`}>{s.title}</Link>
               </li>
@@ -59,13 +59,6 @@ export default function Footer() {
             </li>
             <li>{site.contact.web}</li>
           </ul>
-          <div className="footer-socials">
-            {site.socials.map((s) => (
-              <a key={s.name} href={s.href} aria-label={s.name}>
-                {s.name}
-              </a>
-            ))}
-          </div>
         </div>
       </div>
 

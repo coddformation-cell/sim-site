@@ -1,19 +1,39 @@
-import PageHero from '../components/PageHero';
-import Projects from '../sections/Projects';
-import CTAFinal from '../sections/CTAFinal';
-import { media } from '../data/media';
+import { Link } from 'react-router-dom';
+import PageHeader from '../components/PageHeader';
+import { projects } from '../data/projects';
 
 export default function Projets() {
   return (
     <>
-      <PageHero
+      <PageHeader
         eyebrow="Réalisations"
-        title="Nos chantiers récents en tuyauterie, chaudronnerie, naval et offshore."
-        lead="Un aperçu de nos réalisations pour l’industrie ivoirienne — tuyauterie, chaudronnerie, usinage, onshore/offshore, naval et logistique."
-        image={media.pageHeroes.realisations}
+        title="Nos chantiers en tuyauterie, chaudronnerie, naval et offshore."
+        lead="Chaque réalisation présentera prochainement le contexte, les défis techniques rencontrés, la solution mise en œuvre et, quand disponibles, les visuels avant/après du chantier."
       />
-      <Projects hideHeader />
-      <CTAFinal />
+
+      {projects.length === 0 ? (
+        <section className="section empty-state-section">
+          <div className="container empty-state">
+            <span className="empty-state-badge mono">À venir</span>
+            <h2 className="empty-state-title">
+              Nos réalisations seront publiées prochainement.
+            </h2>
+            <p className="empty-state-desc">
+              Les études de cas — descriptif du chantier, défis techniques,
+              solutions mises en œuvre et visuels avant/après — seront
+              intégrées ici au fur et à mesure de leur validation par le client.
+            </p>
+            <div className="empty-state-actions">
+              <Link to="/services" className="btn btn-ghost">
+                Voir nos services
+              </Link>
+              <Link to="/contact" className="btn btn-primary">
+                Discuter d’un projet
+              </Link>
+            </div>
+          </div>
+        </section>
+      ) : null}
     </>
   );
 }

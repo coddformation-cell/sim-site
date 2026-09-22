@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { services } from '../data/services';
 import { homeServicesIntro } from '../data/company';
+import ServiceCover from '../components/ServiceCover';
 
 export default function HomeServices() {
   return (
@@ -17,8 +18,7 @@ export default function HomeServices() {
             <li key={s.id} className="home-service-card">
               <Link to={`/services/${s.slug}`} className="home-service-inner">
                 <div className="home-service-media">
-                  <img src={s.image} alt="" loading="lazy" />
-                  <span className="home-service-index mono">{s.index}</span>
+                  <ServiceCover index={s.index} title={s.title} />
                 </div>
                 <div className="home-service-body">
                   <h3 className="home-service-title">{s.title}</h3>

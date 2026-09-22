@@ -6,17 +6,17 @@ export default function CTAFinal() {
       <div className="container cta-final-inner">
         <span className="eyebrow">Contact</span>
         <h2 className="cta-final-title">
-          Un projet subsea ou offshore ?
+          Vous avez un chantier ?
           <br />
-          <span>Étudions la solution ensemble.</span>
+          <span>Parlons de votre projet.</span>
         </h2>
         <div className="cta-final-actions">
           <Link to="/contact" className="btn btn-primary">
             Demander un devis
             <span aria-hidden="true">→</span>
           </Link>
-          <Link to="/projets" className="btn btn-ghost">
-            Voir nos projets
+          <Link to="/services" className="btn btn-ghost">
+            Nos services
           </Link>
         </div>
       </div>
