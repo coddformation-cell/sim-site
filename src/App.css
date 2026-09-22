@@ -117,47 +117,21 @@
   z-index: 0;
   overflow: hidden;
 }
+.hero-bg-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 65% center;
+  filter: saturate(1.05);
+}
 .hero-bg-gradient {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 800px 500px at 15% 30%, rgba(22, 49, 112, 0.9) 0%, transparent 50%),
-    radial-gradient(ellipse 600px 400px at 80% 70%, rgba(11, 30, 79, 0.8) 0%, transparent 50%),
-    linear-gradient(135deg, #06153b 0%, #0b1e4f 50%, #10275e 100%);
-}
-.hero-bg-pattern {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(90deg, rgba(201, 169, 97, 0.03) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(201, 169, 97, 0.03) 1px, transparent 1px);
-  background-size: 80px 80px;
-  opacity: 0.6;
-}
-.hero-bg-glow {
-  position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(201, 169, 97, 0.15) 0%, transparent 65%);
-  filter: blur(60px);
-}
-.hero-decoration {
-  position: absolute;
-  right: 5%;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-  width: 300px;
-  height: 500px;
-  pointer-events: none;
-  opacity: 0.9;
-}
-.hero-decoration svg {
-  width: 100%;
-  height: 100%;
+    linear-gradient(90deg, rgba(6, 21, 59, 0.98) 0%, rgba(6, 21, 59, 0.85) 35%, rgba(6, 21, 59, 0.35) 65%, rgba(6, 21, 59, 0.55) 100%),
+    linear-gradient(0deg, rgba(6, 21, 59, 0.9) 0%, rgba(6, 21, 59, 0.1) 30%, rgba(6, 21, 59, 0.1) 70%, rgba(6, 21, 59, 0.75) 100%);
 }
 
 .hero-content {

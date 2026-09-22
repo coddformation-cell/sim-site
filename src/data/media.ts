@@ -20,4 +20,7 @@ export const media = {
   team: '/catalogue/9.jpeg',
   engineer: '/catalogue/8.jpeg',
   weldingWorkshop: '/images/welding-workshop.jpg',
+  // Photo hero : étincelles de soudure, grande zone sombre à gauche
+  // idéale pour la lisibilité du texte (2400x1350, 16:9).
+  heroWelding: '/images/hero-welding-sparks.jpg',
 };

@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import { site } from '../data/site';
+import { media } from '../data/media';
 
 export default function Hero() {
   return (
     <section className="hero">
       <div className="hero-bg" aria-hidden="true">
+        <img src={media.heroWelding} alt="" className="hero-bg-photo" loading="eager" />
         <div className="hero-bg-gradient" />
-        <div className="hero-bg-pattern" />
-        <div className="hero-bg-glow" />
       </div>
 
       <div className="container hero-content">
@@ -51,20 +51,6 @@ export default function Hero() {
             <dd>Koumassi — Abidjan · Côte d’Ivoire</dd>
           </div>
         </dl>
-      </div>
-
-      <div className="hero-decoration" aria-hidden="true">
-        <svg viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
-          {/* Ancre stylisée en watermark */}
-          <g stroke="rgba(201, 169, 97, 0.18)" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="100" cy="120" r="10" />
-            <line x1="100" y1="130" x2="100" y2="280" />
-            <line x1="70" y1="150" x2="130" y2="150" />
-            <path d="M50 240 Q 50 290 90 300 Q 100 302 110 300 Q 150 290 150 240" />
-            <line x1="50" y1="240" x2="35" y2="240" />
-            <line x1="150" y1="240" x2="165" y2="240" />
-          </g>
-        </svg>
       </div>
     </section>
   );
