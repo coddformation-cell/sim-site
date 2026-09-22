@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react';
 import PageHeader from '../components/PageHeader';
+import SocialLinks from '../components/SocialLinks';
 import { site } from '../data/site';
 
 type FormState = {
@@ -87,10 +88,7 @@ export default function Contact() {
 
             <div className="contact-socials">
               <span className="mono contact-info-label">Réseaux</span>
-              <p className="contact-socials-desc">
-                S.I.M sarl est présente sur Facebook et LinkedIn. Les liens
-                exacts seront ajoutés dès validation par le client.
-              </p>
+              <SocialLinks />
             </div>
           </aside>
 

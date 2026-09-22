@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Logo from '../components/Logo';
+import SocialLinks from '../components/SocialLinks';
 import { navLinks, site } from '../data/site';
 import { services } from '../data/services';
 
@@ -22,6 +23,7 @@ export default function Footer() {
               <span className="mono">Tél</span> {site.contact.phone1}
             </li>
           </ul>
+          <SocialLinks className="footer-socials" />
         </div>
 
         <div className="footer-col">
