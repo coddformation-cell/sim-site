@@ -25,20 +25,41 @@ export default function Contact() {
   const [form, setForm] = useState<FormState>(emptyForm);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [sending, setSending] = useState(false);
 
   const update = <K extends keyof FormState>(key: K, value: FormState[K]) =>
     setForm((f) => ({ ...f, [key]: value }));
 
-  const submit = (e: FormEvent<HTMLFormElement>) => {
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
       setError('Merci de renseigner votre nom, votre email et un message.');
       return;
     }
     setError(null);
-    setSent(true);
-    setForm(emptyForm);
-    setTimeout(() => setSent(false), 7000);
+    setSending(true);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(data.error || "L'envoi a échoué.");
+      }
+      setSent(true);
+      setForm(emptyForm);
+      setTimeout(() => setSent(false), 7000);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? `${err.message} Vous pouvez aussi nous joindre directement au ${site.contact.phone1} ou par email à ${site.contact.email}.`
+          : "L'envoi a échoué. Merci de réessayer."
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -168,9 +189,9 @@ export default function Contact() {
               </p>
             )}
 
-            <button type="submit" className="btn btn-primary form-submit">
-              Envoyer la demande
-              <span aria-hidden="true">→</span>
+            <button type="submit" className="btn btn-primary form-submit" disabled={sending}>
+              {sending ? 'Envoi en cours…' : 'Envoyer la demande'}
+              {!sending && <span aria-hidden="true">→</span>}
             </button>
           </form>
         </div>

@@ -1025,6 +1025,10 @@
   align-self: flex-start;
   margin-top: 0.5rem;
 }
+.form-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 .form-error {
   color: #fca5a5;
   font-size: 0.88rem;
