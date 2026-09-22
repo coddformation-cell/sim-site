@@ -13,6 +13,10 @@ export default function ServiceDetail() {
   return (
     <>
       <section className="service-detail-hero">
+        <div className="service-detail-hero-media" aria-hidden="true">
+          <img src={service.image} alt="" loading="eager" />
+          <div className="service-detail-hero-overlay" />
+        </div>
         <div className="container service-detail-hero-inner">
           <div className="service-detail-hero-meta mono">
             <span>Service {service.index}</span>

@@ -7,6 +7,7 @@ export type SIMService = {
   description: string;
   competences: string[];
   moyens: string[];
+  image: string;
 };
 
 // Contenu 100% issu du catalogue officiel S.I.M sarl.
@@ -15,6 +16,7 @@ export type SIMService = {
 export const services: SIMService[] = [
   {
     id: 'tuyauterie',
+    image: '/images/services/tuyauterie.jpg',
     slug: 'tuyauterie',
     index: '01',
     title: 'Tuyauterie',
@@ -36,6 +38,7 @@ export const services: SIMService[] = [
   },
   {
     id: 'chaudronnerie',
+    image: '/images/services/chaudronnerie.jpg',
     slug: 'chaudronnerie',
     index: '02',
     title: 'Chaudronnerie',
@@ -69,6 +72,7 @@ export const services: SIMService[] = [
   },
   {
     id: 'usinage',
+    image: '/images/services/usinage.jpg',
     slug: 'usinage',
     index: '03',
     title: 'Usinage',
@@ -94,6 +98,7 @@ export const services: SIMService[] = [
   },
   {
     id: 'onshore-offshore',
+    image: '/images/services/onshore-offshore.jpg',
     slug: 'onshore-offshore',
     index: '04',
     title: 'Onshore / Offshore',
@@ -117,6 +122,7 @@ export const services: SIMService[] = [
   },
   {
     id: 'naval',
+    image: '/images/services/naval.jpg',
     slug: 'naval',
     index: '05',
     title: 'Construction & Réparation Navale',
@@ -144,6 +150,7 @@ export const services: SIMService[] = [
   },
   {
     id: 'echangeur-aero',
+    image: '/images/services/echangeur-aero.jpg',
     slug: 'echangeur-aero',
     index: '06',
     title: 'Échangeur & Aéro',
@@ -166,6 +173,7 @@ export const services: SIMService[] = [
   },
   {
     id: 'logistique',
+    image: '/images/services/logistique.jpg',
     slug: 'logistique',
     index: '07',
     title: 'Logistique',

@@ -12,8 +12,29 @@
     radial-gradient(ellipse at top left, rgba(201, 169, 97, 0.06), transparent 60%),
     var(--color-bg);
   position: relative;
+  overflow: hidden;
+}
+.page-header-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.page-header-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.05);
+}
+.page-header-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(6, 21, 59, 0.95) 0%, rgba(6, 21, 59, 0.75) 45%, rgba(6, 21, 59, 0.3) 100%),
+    linear-gradient(0deg, rgba(6, 21, 59, 0.85) 0%, transparent 40%);
 }
 .page-header-inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -2653,6 +2674,28 @@
   justify-content: center;
   isolation: isolate;
 }
+.service-cover-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform 700ms ease;
+}
+.home-service-inner:hover .service-cover-photo,
+.services-alt-row:hover .service-cover-photo {
+  transform: scale(1.05);
+}
+.service-cover-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.service-cover.has-photo .service-cover-overlay {
+  background:
+    linear-gradient(180deg, rgba(11, 30, 79, 0.15) 0%, rgba(11, 30, 79, 0.35) 55%, rgba(11, 30, 79, 0.9) 100%);
+}
 .service-cover-pattern {
   position: absolute;
   inset: 0;
@@ -2692,7 +2735,8 @@
   border: 1px solid rgba(201, 169, 97, 0.4);
   border-radius: 2px;
   display: inline-block;
-  background: rgba(11, 30, 79, 0.4);
+  background: rgba(11, 30, 79, 0.65);
+  backdrop-filter: blur(3px);
 }
 .service-cover-title {
   font-family: var(--font-sans);
@@ -2951,13 +2995,32 @@
 
 /* Service Detail */
 .service-detail-hero {
+  position: relative;
   padding: clamp(8rem, 16vh, 12rem) 0 clamp(3rem, 6vw, 5rem);
-  background:
-    radial-gradient(ellipse at top left, rgba(201, 169, 97, 0.08), transparent 60%),
-    var(--color-bg);
   border-bottom: 1px solid var(--color-line);
+  overflow: hidden;
+}
+.service-detail-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.service-detail-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.05);
+}
+.service-detail-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(6, 21, 59, 0.95) 0%, rgba(6, 21, 59, 0.75) 45%, rgba(6, 21, 59, 0.3) 100%),
+    linear-gradient(0deg, rgba(6, 21, 59, 0.85) 0%, transparent 40%);
 }
 .service-detail-hero-inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 1rem;

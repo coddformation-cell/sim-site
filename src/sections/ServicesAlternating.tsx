@@ -13,7 +13,7 @@ export default function ServicesAlternating() {
               className={`services-alt-row ${i % 2 === 1 ? 'is-reverse' : ''}`}
             >
               <div className="services-alt-media services-alt-media-cover">
-                <ServiceCover index={s.index} title={s.title} />
+                <ServiceCover index={s.index} title={s.title} image={s.image} />
               </div>
               <div className="services-alt-body">
                 <h3 className="services-alt-title">{s.title}</h3>

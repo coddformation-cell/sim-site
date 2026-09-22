@@ -18,7 +18,7 @@ export default function HomeServices() {
             <li key={s.id} className="home-service-card">
               <Link to={`/services/${s.slug}`} className="home-service-inner">
                 <div className="home-service-media">
-                  <ServiceCover index={s.index} title={s.title} />
+                  <ServiceCover index={s.index} title={s.title} image={s.image} />
                 </div>
                 <div className="home-service-body">
                   <h3 className="home-service-title">{s.title}</h3>

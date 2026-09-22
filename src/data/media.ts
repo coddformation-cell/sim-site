@@ -23,4 +23,6 @@ export const media = {
   // Photo hero : étincelles de soudure, grande zone sombre à gauche
   // idéale pour la lisibilité du texte (2400x1350, 16:9).
   heroWelding: '/images/hero-welding-sparks.jpg',
+  // Photo équipe industrielle — page À propos (2000x1333, 16:9).
+  teamIndustrial: '/images/team-industrial.jpg',
 };

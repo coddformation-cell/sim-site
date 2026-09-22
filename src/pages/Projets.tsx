@@ -1,14 +1,18 @@
 import { Link } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
 import { projects } from '../data/projects';
+import { services } from '../data/services';
 
 export default function Projets() {
+  const headerImage = services.find((s) => s.id === 'naval')?.image;
+
   return (
     <>
       <PageHeader
         eyebrow="Réalisations"
         title="Nos chantiers en tuyauterie, chaudronnerie, naval et offshore."
         lead="Chaque réalisation présentera prochainement le contexte, les défis techniques rencontrés, la solution mise en œuvre et, quand disponibles, les visuels avant/après du chantier."
+        image={headerImage}
       />
 
       {projects.length === 0 ? (

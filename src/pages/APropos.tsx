@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
 import { values, homeAboutIntro } from '../data/company';
 import { site } from '../data/site';
+import { media } from '../data/media';
 
 export default function APropos() {
   return (
@@ -10,6 +11,7 @@ export default function APropos() {
         eyebrow="À propos"
         title={homeAboutIntro.title}
         lead={homeAboutIntro.paragraphs[0]}
+        image={media.teamIndustrial}
       />
 
       <section className="section about-section">
