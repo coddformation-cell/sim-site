@@ -6,11 +6,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Header from './layout/Header';
 import Footer from './layout/Footer';
 import Home from './pages/Home';
-import Expertises from './pages/Expertises';
-import Solutions from './pages/Solutions';
+import Services from './pages/Services';
+import ServiceDetail from './pages/ServiceDetail';
 import Projets from './pages/Projets';
 import ProjectDetail from './pages/ProjectDetail';
-import Referentiels from './pages/Referentiels';
+import Partenaires from './pages/Partenaires';
 import APropos from './pages/APropos';
 import Contact from './pages/Contact';
 import './App.css';
@@ -18,7 +18,7 @@ import './App.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const REVEAL_SELECTOR =
-  '[data-reveal], .section-head, .capability-card, .solution-card, .project-card, .testimonial-card, .about-value, .process-step, .standard-item, .figure-item, .home-expertise-main, .home-expertise-card, .home-solution-row, .home-project-card, .capability-alt-row, .methodology-step, .timeline-step, .referentiels-step, .project-gallery-item, .project-block';
+  '[data-reveal], .section-head, .home-service-card, .home-project-card, .services-alt-row, .project-card, .testimonial-card, .about-value, .process-step, .figure-item, .partner-item, .project-gallery-item, .project-block';
 
 function RouteScrollReset() {
   const { pathname } = useLocation();
@@ -62,12 +62,12 @@ function AppShell() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/expertises" element={<Expertises />} />
-          <Route path="/solutions" element={<Solutions />} />
-          <Route path="/projets" element={<Projets />} />
-          <Route path="/projets/:slug" element={<ProjectDetail />} />
-          <Route path="/referentiels" element={<Referentiels />} />
           <Route path="/a-propos" element={<APropos />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/:slug" element={<ServiceDetail />} />
+          <Route path="/realisations" element={<Projets />} />
+          <Route path="/realisations/:slug" element={<ProjectDetail />} />
+          <Route path="/partenaires" element={<Partenaires />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

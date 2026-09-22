@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { projectFilters, projects, type ProjectFilter } from '../data/projects';
 
 type Props = { hideHeader?: boolean };
@@ -17,12 +18,11 @@ export default function Projects({ hideHeader = false }: Props) {
         <header className={`section-head projects-head ${hideHeader ? 'is-filters-only' : ''}`}>
           {!hideHeader && (
             <div>
-              <span className="eyebrow">Projets</span>
-              <h2 className="section-title">Une sélection illustrative de nos projets.</h2>
+              <span className="eyebrow">Réalisations</span>
+              <h2 className="section-title">Nos chantiers récents.</h2>
               <p className="section-lead">
-                Références de projets fictives à des fins de démonstration —
-                aucune donnée client réelle ni localisation exacte n’est
-                divulguée.
+                Un aperçu de nos réalisations en tuyauterie, chaudronnerie,
+                usinage, naval, onshore/offshore et logistique.
               </p>
             </div>
           )}
@@ -48,7 +48,8 @@ export default function Projects({ hideHeader = false }: Props) {
 
         <div className="projects-grid">
           {items.map((p, i) => (
-            <article
+            <Link
+              to={`/realisations/${p.slug}`}
               key={p.id}
               className="project-card"
               style={{ transitionDelay: `${Math.min(i, 4) * 60}ms` }}
@@ -61,12 +62,8 @@ export default function Projects({ hideHeader = false }: Props) {
                 <h3 className="project-title">{p.title}</h3>
                 <dl className="project-specs">
                   <div>
-                    <dt className="mono">Champ</dt>
-                    <dd>{p.field}</dd>
-                  </div>
-                  <div>
-                    <dt className="mono">Profondeur</dt>
-                    <dd>{p.waterDepth}</dd>
+                    <dt className="mono">Lieu</dt>
+                    <dd>{p.location}</dd>
                   </div>
                   <div>
                     <dt className="mono">Périmètre</dt>
@@ -78,7 +75,7 @@ export default function Projects({ hideHeader = false }: Props) {
                   </div>
                 </dl>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
 

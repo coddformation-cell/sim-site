@@ -1,18 +1,18 @@
 :root {
-  /* Palette — dark mode only */
-  --color-bg: #0a1929;
-  --color-bg-elev: #0f2337;
-  --color-bg-elev-2: #14304a;
-  --color-surface: #1e293b;
-  --color-fg: #f1f5f9;
+  /* Palette — S.I.M. — bleu marine + or */
+  --color-bg: #0b1e4f;
+  --color-bg-elev: #10275e;
+  --color-bg-elev-2: #163170;
+  --color-surface: #1e3a8a;
+  --color-fg: #f5f2ea;
   --color-fg-strong: #ffffff;
-  --color-muted: #94a3b8;
-  --color-muted-strong: #cbd5e1;
-  --color-accent: #22d3ee;
-  --color-accent-strong: #06b6d4;
-  --color-accent-soft: rgba(34, 211, 238, 0.12);
-  --color-line: rgba(148, 163, 184, 0.18);
-  --color-line-strong: rgba(148, 163, 184, 0.3);
+  --color-muted: #a8b3d1;
+  --color-muted-strong: #d1d7e6;
+  --color-accent: #c9a961;
+  --color-accent-strong: #b8964f;
+  --color-accent-soft: rgba(201, 169, 97, 0.12);
+  --color-line: rgba(200, 210, 230, 0.16);
+  --color-line-strong: rgba(200, 210, 230, 0.32);
 
   --font-sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -112,11 +112,11 @@ p { margin: 0; }
 }
 .btn-primary {
   background: var(--color-accent);
-  color: #06212e;
+  color: #0b1e4f;
   font-weight: 600;
 }
 .btn-primary:hover {
-  background: #67e8f9;
+  background: #dfc27f;
   transform: translateY(-1px);
 }
 .btn-ghost {
@@ -150,7 +150,7 @@ p { margin: 0; }
 
 ::selection {
   background: var(--color-accent);
-  color: #06212e;
+  color: #0b1e4f;
 }
 
 :focus-visible {

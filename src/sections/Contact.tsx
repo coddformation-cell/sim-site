@@ -51,27 +51,33 @@ export default function Contact() {
           <ul className="contact-items" role="list">
             <li>
               <span className="contact-label mono">Téléphone</span>
-              <a href={`tel:${site.contact.phone.replace(/\s/g, '')}`}>
-                {site.contact.phone}
+              <a href={`tel:${site.contact.phone1.replace(/\s/g, '')}`}>
+                {site.contact.phone1}
+              </a>
+              <a href={`tel:${site.contact.phone2.replace(/\s/g, '')}`}>
+                {site.contact.phone2}
               </a>
             </li>
             <li>
-              <span className="contact-label mono">Email professionnel</span>
+              <span className="contact-label mono">Fax</span>
+              <span>{site.contact.fax}</span>
+            </li>
+            <li>
+              <span className="contact-label mono">Email</span>
               <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+              <a href={`mailto:${site.contact.emailSecretariat}`}>
+                {site.contact.emailSecretariat}
+              </a>
             </li>
             <li>
-              <span className="contact-label mono">Siège</span>
-              <span>{site.contact.hq}</span>
+              <span className="contact-label mono">Siège social</span>
+              <span>{site.contact.address}</span>
             </li>
             <li>
-              <span className="contact-label mono">Base opérationnelle</span>
-              <span>{site.contact.operationsBase}</span>
+              <span className="contact-label mono">Site web</span>
+              <span>{site.contact.web}</span>
             </li>
           </ul>
-
-          <p className="contact-note mono">
-            Coordonnées fictives — à des fins de démonstration uniquement.
-          </p>
         </div>
 
         <form className="contact-form" onSubmit={submit} noValidate>

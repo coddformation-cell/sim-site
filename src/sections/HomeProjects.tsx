@@ -16,7 +16,7 @@ export default function HomeProjects() {
           {featuredProjects.map((p, i) => (
             <Link
               key={p.id}
-              to={`/projets/${p.slug}`}
+              to={`/realisations/${p.slug}`}
               className={`home-project-card ${i === 0 ? 'is-primary' : ''}`}
             >
               <div className="home-project-media">
@@ -28,8 +28,8 @@ export default function HomeProjects() {
                 <p className="home-project-summary">{p.summary}</p>
                 <dl className="home-project-mini">
                   <div>
-                    <dt className="mono">Profondeur</dt>
-                    <dd>{p.waterDepth}</dd>
+                    <dt className="mono">Lieu</dt>
+                    <dd>{p.location}</dd>
                   </div>
                   <div>
                     <dt className="mono">Année</dt>
@@ -45,8 +45,8 @@ export default function HomeProjects() {
         </div>
 
         <div className="home-projects-footer">
-          <Link to="/projets" className="btn btn-ghost">
-            Voir tous les projets
+          <Link to="/realisations" className="btn btn-ghost">
+            Voir toutes les réalisations
           </Link>
         </div>
       </div>

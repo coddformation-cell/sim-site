@@ -6,21 +6,21 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="hero-media" aria-hidden="true">
-        <img src={media.hero.url} alt="" loading="eager" />
+        <img src={media.hero} alt="" loading="eager" />
         <div className="hero-media-overlay" />
       </div>
 
       <div className="container hero-content">
         <div className="hero-brandline">
-          <span className="mono hero-brand">KORIS ENERGY</span>
+          <span className="mono hero-brand">S.I.M sarl</span>
           <span className="hero-brandline-dot" aria-hidden="true" />
           <span className="mono hero-brand-region">{site.region}</span>
         </div>
 
         <h1 className="hero-title">
-          Ingénierie
+          Soudure Industrielle
           <br />
-          des profondeurs.
+          <span className="hero-title-accent">& Maritime.</span>
         </h1>
 
         <p className="hero-baseline mono">{site.baseline}</p>
@@ -29,33 +29,28 @@ export default function Hero() {
 
         <div className="hero-actions">
           <Link to="/contact" className="btn btn-primary">
-            Parler de votre projet
+            Demander un devis
             <span aria-hidden="true">→</span>
           </Link>
-          <Link to="/expertises" className="btn btn-ghost">
-            Voir nos expertises
+          <Link to="/services" className="btn btn-ghost">
+            Nos services
           </Link>
         </div>
 
         <dl className="hero-meta">
           <div>
-            <dt className="mono">Domaines</dt>
-            <dd>Offshore · Subsea · Pipeline · IRM</dd>
+            <dt className="mono">Expertises</dt>
+            <dd>Tuyauterie · Chaudronnerie · Usinage</dd>
           </div>
           <div>
-            <dt className="mono">Région</dt>
-            <dd>Golfe de Guinée — Afrique de l’Ouest</dd>
+            <dt className="mono">Interventions</dt>
+            <dd>Onshore · Offshore · Naval</dd>
           </div>
           <div>
-            <dt className="mono">Contractualisation</dt>
-            <dd>EPCI · Services · Programmes IRM</dd>
+            <dt className="mono">Localisation</dt>
+            <dd>Koumassi — Abidjan · Côte d’Ivoire</dd>
           </div>
         </dl>
-
-        <span className="hero-demo-badge" aria-label="Site de démonstration">
-          <span className="hero-demo-dot" aria-hidden="true" />
-          Démo · Maquette fictive
-        </span>
       </div>
     </section>
   );

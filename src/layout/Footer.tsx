@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Logo from '../components/Logo';
 import { navLinks, site } from '../data/site';
-import { capabilities } from '../data/capabilities';
+import { services } from '../data/services';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -11,16 +11,15 @@ export default function Footer() {
         <div className="footer-brand">
           <Logo />
           <p>
-            Services offshore, subsea, pipeline et IRM pour les opérateurs
-            pétroliers et gaziers et les EPC contractors — pensés depuis le
-            Golfe de Guinée.
+            Soudure Industrielle & Maritime — Tuyauterie, Chaudronnerie, Usinage,
+            Onshore/Offshore, Naval et Logistique en Côte d’Ivoire.
           </p>
           <ul className="footer-locations" role="list">
             <li>
-              <span className="mono">Siège</span> {site.contact.hq}
+              <span className="mono">Siège</span> {site.contact.address}
             </li>
             <li>
-              <span className="mono">Base</span> {site.contact.operationsBase}
+              <span className="mono">Tel</span> {site.contact.phone1}
             </li>
           </ul>
         </div>
@@ -37,11 +36,11 @@ export default function Footer() {
         </div>
 
         <div className="footer-col">
-          <h4>Expertises</h4>
+          <h4>Services</h4>
           <ul>
-            {capabilities.map((c) => (
-              <li key={c.id}>
-                <Link to="/expertises">{c.title}</Link>
+            {services.slice(0, 6).map((s) => (
+              <li key={s.id}>
+                <Link to={`/services/${s.slug}`}>{s.title}</Link>
               </li>
             ))}
           </ul>
@@ -51,13 +50,14 @@ export default function Footer() {
           <h4>Contact</h4>
           <ul>
             <li>
-              <a href={`tel:${site.contact.phone.replace(/\s/g, '')}`}>
-                {site.contact.phone}
+              <a href={`tel:${site.contact.phone1.replace(/\s/g, '')}`}>
+                {site.contact.phone1}
               </a>
             </li>
             <li>
               <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
             </li>
+            <li>{site.contact.web}</li>
           </ul>
           <div className="footer-socials">
             {site.socials.map((s) => (
@@ -70,10 +70,8 @@ export default function Footer() {
       </div>
 
       <div className="container footer-bottom">
-        <span>© {year} KORIS ENERGY (fictif) — Tous droits réservés.</span>
-        <span className="footer-demo">
-          Maquette de démonstration — aucun service réel n’est fourni.
-        </span>
+        <span>© {year} S.I.M sarl — Soudure Industrielle & Maritime.</span>
+        <span className="footer-demo">Tous droits réservés.</span>
       </div>
     </footer>
   );

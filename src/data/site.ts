@@ -1,29 +1,33 @@
 export const site = {
-  brand: 'KORIS ENERGY',
-  baseline: 'Engineering the depths. Powering the future.',
-  tagline: 'Ingénierie des profondeurs.',
+  brand: 'S.I.M sarl',
+  brandFull: 'Soudure Industrielle & Maritime',
+  baseline: 'Mécanique · Tuyauterie · Chaudronnerie · Ingénierie',
+  tagline: 'La soudure industrielle et maritime en Côte d’Ivoire.',
   subline:
-    'KORIS ENERGY accompagne les acteurs de l’énergie dans leurs projets offshore, subsea et pipeline dans le Golfe de Guinée.',
-  region: 'Golfe de Guinée',
+    'S.I.M sarl accompagne les acteurs industriels et maritimes de Côte d’Ivoire dans leurs projets de tuyauterie, chaudronnerie, usinage, onshore/offshore, naval et logistique.',
+  region: 'Abidjan, Côte d’Ivoire',
   contact: {
-    phone: '+225 07 00 00 00 00',
-    email: 'contact@koris-energy.demo',
-    hq: 'Plateau, Abidjan — Côte d’Ivoire',
-    operationsBase: 'Port de San-Pédro — Côte d’Ivoire',
+    phone1: '+225 27 21 74 50 61',
+    phone2: '+225 01 51 17 17 10',
+    fax: '+225 25 21 00 32 79',
+    email: 'simsoudure@gmail.com',
+    emailSecretariat: 'secretariat@sim.ci',
+    web: 'www.sim.ci',
+    address: 'Koumassi Barradji, quartier 3 ampoules 01 · B.P 587 · Abidjan 01',
+    city: 'Koumassi — Abidjan',
+    country: 'Côte d’Ivoire',
   },
   socials: [
-    { name: 'LinkedIn', href: '#' },
-    { name: 'YouTube', href: '#' },
+    { name: 'Facebook', href: '#', handle: 'SIM sarl soudure industrielle et maritime' },
+    { name: 'LinkedIn', href: '#', handle: 'SIM sarl soudure industrielle et maritime' },
   ],
-  disclaimer:
-    'Ce site est une maquette de démonstration. Le nom de l’entreprise, les projets, les chiffres, les références et les témoignages sont fictifs et illustratifs. Aucun service réel n’est fourni.',
 };
 
 export const navLinks = [
-  { label: 'Expertises', to: '/expertises' },
-  { label: 'Solutions', to: '/solutions' },
-  { label: 'Projets', to: '/projets' },
-  { label: 'Référentiels', to: '/referentiels' },
+  { label: 'Accueil', to: '/' },
   { label: 'À propos', to: '/a-propos' },
+  { label: 'Services', to: '/services' },
+  { label: 'Réalisations', to: '/realisations' },
+  { label: 'Partenaires', to: '/partenaires' },
   { label: 'Contact', to: '/contact' },
 ];

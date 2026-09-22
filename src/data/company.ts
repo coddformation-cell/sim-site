@@ -1,5 +1,4 @@
-// Toutes les valeurs ci-dessous sont illustratives et fictives.
-// Elles servent uniquement de contenu placeholder pour la maquette.
+// Contenu S.I.M. sarl — données réelles issues du catalogue officiel.
 
 export type Testimonial = {
   id: string;
@@ -8,178 +7,125 @@ export type Testimonial = {
   quote: string;
 };
 
+// Témoignages placeholder — à remplacer par de vrais retours S.I.M.
 export const testimonials: Testimonial[] = [
   {
     id: 't1',
-    role: 'Directeur de projet',
-    organisation: 'Opérateur E&P (fictif)',
+    role: 'Responsable maintenance',
+    organisation: 'Partenaire industriel',
     quote:
-      'Une approche d’ingénierie claire, une exécution disciplinée et une vraie culture HSE. La livraison a suivi le plan convenu.',
+      'Une équipe technique fiable, disponible et rigoureuse. Nos chantiers sont livrés dans les délais et à la qualité attendue.',
   },
   {
     id: 't2',
-    role: 'Responsable des opérations',
-    organisation: 'Opérateur indépendant (fictif)',
+    role: 'Chef de projet',
+    organisation: 'Opérateur onshore',
     quote:
-      'Leur équipe subsea a piloté notre campagne d’inspection de bout en bout. Reporting concis et priorisation rapide des anomalies.',
+      'Le savoir-faire soudure et tuyauterie de S.I.M. est reconnu sur nos sites. La coordination HSE est irréprochable.',
   },
   {
     id: 't3',
-    role: 'Responsable HSE',
-    organisation: 'Opérateur FPSO (fictif)',
+    role: 'Responsable technique',
+    organisation: 'Armateur',
     quote:
-      'Leadership sécurité fort à bord. Toolbox talks, procédures et reporting ont été traités comme des livrables à part entière.',
+      'Un excellent partenaire pour la réparation et la maintenance de nos bateaux. Résultat visible avant/après.',
   },
 ];
 
 export const keyFigures = [
-  { value: '+120', label: 'opérations offshore', hint: 'Chiffre illustratif' },
-  { value: '+8', label: 'années d’expérience', hint: 'Chiffre illustratif' },
-  { value: '+40 km', label: 'de pipeline installé', hint: 'Chiffre illustratif' },
-  { value: '15+', label: 'clients accompagnés', hint: 'Chiffre illustratif' },
+  { value: '15+', label: 'années d’expérience', hint: '' },
+  { value: '7', label: 'domaines d’expertise', hint: '' },
+  { value: '12+', label: 'partenaires industriels', hint: '' },
+  { value: '24/7', label: 'disponibilité opérationnelle', hint: '' },
 ];
 
 export const processSteps = [
   {
     step: '01',
-    title: 'Cadrage',
+    title: 'Écoute et cadrage',
     description:
-      'Premier échange pour cerner le besoin : périmètre, contraintes, HSE, planning et interfaces avec les autres contractants.',
+      'Nous cernons votre besoin, le périmètre technique et les contraintes HSE dès le premier échange.',
   },
   {
     step: '02',
-    title: 'Étude technique',
+    title: 'Étude et proposition',
     description:
-      'Étude détaillée, plans d’installation, méthodologie et sélection des équipements marins et subsea.',
+      'Étude technique par notre bureau d’études, sélection des méthodes et des équipements, proposition commerciale.',
   },
   {
     step: '03',
-    title: 'Proposition',
+    title: 'Exécution',
     description:
-      'Proposition commerciale et technique, planning contractuel, matrice de responsabilités et cadre HSE.',
+      'Mobilisation des équipes qualifiées, exécution en atelier ou sur site, suivi HSE quotidien.',
   },
   {
     step: '04',
-    title: 'Exécution et livraison',
+    title: 'Livraison et suivi',
     description:
-      'Mobilisation, exécution offshore, reporting quotidien, pré-commissioning et transfert au client.',
+      'Contrôle qualité, essais, remise au client et suivi de maintenance selon vos besoins.',
   },
 ];
 
 export const values = [
   {
-    title: 'La sécurité d’abord',
-    text: 'La sécurité des équipes et des opérations est le premier critère de conception et d’exécution.',
+    title: 'Qualité',
+    text: 'Un contrôle rigoureux à chaque étape, du bureau d’études à la remise au client.',
   },
   {
-    title: 'Excellence technique',
-    text: 'Une culture d’ingénierie précise, avec des méthodes cadrées et une revue rigoureuse des livrables.',
+    title: 'Sécurité',
+    text: 'La sécurité des équipes et des installations est notre priorité absolue sur tous nos chantiers.',
   },
   {
-    title: 'Contenu local',
-    text: 'Une présence en Côte d’Ivoire et un ancrage régional durable, en support du contenu local.',
+    title: 'Respect des délais',
+    text: 'Un engagement fort sur les délais convenus, avec un pilotage précis de chaque mission.',
   },
   {
-    title: 'Fiabilité',
-    text: 'Un engagement fort sur les délais, la qualité et la transparence tout au long des projets.',
+    title: 'Proximité',
+    text: 'Une équipe basée en Côte d’Ivoire, mobilisable rapidement sur vos sites industriels et maritimes.',
   },
 ];
 
 export const hseStatement = {
   eyebrow: 'HSE et qualité',
-  title: 'La sécurité au cœur de l’exécution.',
+  title: 'La sécurité et la qualité au cœur de nos chantiers.',
   description:
-    'Notre approche place la santé, la sécurité, l’environnement et la qualité au cœur de chaque opération. Procédures, plans HSE, toolbox talks et revues d’incident sont traités comme des livrables opérationnels à part entière.',
-  pillars: ['Sécurité', 'Qualité', 'Environnement', 'Conformité'],
+    'Chez S.I.M sarl, la sécurité, la qualité et le respect de l’environnement sont intégrés dans chaque procédure. Nos personnels sont qualifiés et habilités, nos équipements de soudage certifiés, et nos méthodes documentées.',
+  pillars: ['Sécurité', 'Qualité', 'Environnement', 'Ponctualité'],
 };
 
-// Timeline entreprise — 100% fictive. Chaque étape porte la mention (fictif).
-export const timelineSteps = [
-  {
-    year: '2018',
-    title: 'Création de KORIS ENERGY',
-    text: 'Constitution de l’équipe fondatrice, positionnement offshore et subsea sur le Golfe de Guinée. (fictif)',
-  },
-  {
-    year: '2020',
-    title: 'Première campagne subsea',
-    text: 'Premier programme d’inspection ROV sur un champ pilote. Mise en place des procédures IRM. (fictif)',
-  },
-  {
-    year: '2022',
-    title: 'Base opérationnelle San-Pédro',
-    text: 'Ouverture d’une base opérationnelle dédiée aux mobilisations rapides. (fictif)',
-  },
-  {
-    year: '2024',
-    title: 'Élargissement des expertises',
-    text: 'Extension des capacités à l’offshore construction et à l’EPCI pipeline. (fictif)',
-  },
-  {
-    year: '2026',
-    title: 'Aujourd’hui',
-    text: 'Une équipe pluridisciplinaire au service des opérateurs et EPC contractors de la région. (fictif)',
-  },
-];
-
 export const manifestoBlock = {
-  eyebrow: 'Manifesto',
-  title: 'Des infrastructures critiques. Des environnements exigeants.',
+  eyebrow: 'Notre approche',
+  title: 'Soudure industrielle et maritime, avec exigence.',
   paragraphs: [
-    'De la surface aux grandes profondeurs, KORIS ENERGY conçoit, installe et maintient des infrastructures offshore, subsea et pipeline pour le compte d’opérateurs pétroliers et gaziers du Golfe de Guinée.',
-    'Notre approche combine rigueur d’ingénierie, discipline HSE et proximité opérationnelle. Chaque intervention est cadrée, documentée et menée à un niveau d’exigence aligné sur les référentiels internationaux du secteur.',
+    'Basée à Abidjan, S.I.M sarl accompagne depuis plus d’une décennie les grands acteurs industriels et maritimes de Côte d’Ivoire — de l’eau potable au raffinage pétrolier, du port autonome à la marine nationale.',
+    'De la tuyauterie à la construction navale, en passant par la chaudronnerie, l’usinage, les interventions onshore/offshore et la logistique, nous mettons à votre disposition un savoir-faire complet et une équipe qualifiée, mobilisable rapidement sur vos chantiers.',
   ],
 };
 
 export const visualBannerContent = {
   eyebrow: '',
-  title: 'Du fond marin aux infrastructures de surface.',
-  cta: 'Explorer nos expertises',
-  ctaTo: '/expertises',
+  title: 'De la soudure au chantier offshore, une expertise complète.',
+  cta: 'Découvrir nos services',
+  ctaTo: '/services',
 };
 
 export const homeProjectsIntro = {
-  eyebrow: 'Projets',
-  title: 'Une sélection de nos projets illustratifs.',
+  eyebrow: 'Réalisations',
+  title: 'Quelques réalisations récentes.',
   lead:
-    'Références fictives à titre de démonstration. Chaque projet dispose d’une page dédiée.',
+    'Un aperçu de nos chantiers en tuyauterie, chaudronnerie, naval et onshore/offshore.',
 };
 
-export const homeExpertisesIntro = {
-  eyebrow: 'Expertises',
-  title: 'Quatre expertises. Une chaîne de valeur complète.',
+export const homeServicesIntro = {
+  eyebrow: 'Nos services',
+  title: 'Sept expertises complémentaires pour vos chantiers.',
   lead:
-    'De l’ingénierie de pipeline à la maintenance IRM, nos équipes couvrent chaque étape des projets offshore et subsea.',
+    'De la tuyauterie à la construction navale, S.I.M sarl couvre toute la chaîne des travaux industriels et maritimes.',
 };
 
-export const homeSolutionsIntro = {
-  eyebrow: 'Solutions',
-  title: 'Trois formules pour cadrer votre besoin.',
+export const partnersIntro = {
+  eyebrow: 'Partenaires',
+  title: 'Ils nous font confiance.',
   lead:
-    'De la campagne d’inspection ciblée à la prise en charge complète d’un lot EPCI, nos solutions sont pensées pour les opérateurs et EPC contractors.',
-};
-
-export const referentielsUsage = {
-  eyebrow: 'Comment ils interviennent',
-  title: 'Des référentiels intégrés à la préparation et à l’exécution.',
-  steps: [
-    {
-      step: '01',
-      title: 'Préparation',
-      description:
-        'Les référentiels applicables sont identifiés dès le cadrage HSE et technique, puis intégrés aux plans d’exécution et aux procédures.',
-    },
-    {
-      step: '02',
-      title: 'Exécution',
-      description:
-        'Les méthodes et les livrables sont conduits en alignement avec les référentiels sélectionnés, sous supervision d’un responsable qualité dédié.',
-    },
-    {
-      step: '03',
-      title: 'Retour d’expérience',
-      description:
-        'Les enseignements de chaque projet alimentent la base documentaire et affinent l’alignement sur les référentiels à long terme.',
-    },
-  ],
+    'Nous accompagnons de grands acteurs industriels, énergétiques et maritimes de Côte d’Ivoire.',
 };

@@ -6,7 +6,7 @@ export default function HSEBlock() {
     <section className="section hse-block">
       <div className="container hse-block-inner">
         <div className="hse-block-media">
-          <img src={media.hse.url} alt="" loading="lazy" />
+          <img src={media.hse} alt="" loading="lazy" />
           <div className="hse-block-overlay" />
         </div>
         <div className="hse-block-body">

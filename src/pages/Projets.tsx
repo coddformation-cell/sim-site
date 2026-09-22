@@ -7,10 +7,10 @@ export default function Projets() {
   return (
     <>
       <PageHero
-        eyebrow="Projets"
-        title="Une sélection illustrative de nos projets."
-        lead="Références de projets fictives à des fins de démonstration. Aucune donnée client réelle ni localisation exacte n’est divulguée."
-        image={media.pageHeroes.projets}
+        eyebrow="Réalisations"
+        title="Nos chantiers récents en tuyauterie, chaudronnerie, naval et offshore."
+        lead="Un aperçu de nos réalisations pour l’industrie ivoirienne — tuyauterie, chaudronnerie, usinage, onshore/offshore, naval et logistique."
+        image={media.pageHeroes.realisations}
       />
       <Projects hideHeader />
       <CTAFinal />

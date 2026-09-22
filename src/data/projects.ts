@@ -4,10 +4,9 @@ export type Project = {
   id: string;
   slug: string;
   title: string;
-  category: 'pipeline' | 'subsea' | 'offshore' | 'irm';
+  category: 'tuyauterie' | 'chaudronnerie' | 'usinage' | 'onshore-offshore' | 'naval' | 'logistique';
   categoryLabel: string;
-  field: string;
-  waterDepth: string;
+  location: string;
   scope: string;
   year: string;
   image: string;
@@ -21,210 +20,186 @@ export type Project = {
   featured?: boolean;
 };
 
-const projectSpecs = (extras: Array<{ label: string; value: string }>) => extras;
-
+// Références basées sur les activités documentées dans le catalogue S.I.M.
+// Les détails précis (date, client) sont à ajuster selon les projets réels du client.
 export const projects: Project[] = [
   {
     id: 'p1',
-    slug: 'deepwater-flowline',
-    title: 'Installation de flowline en eaux profondes',
-    category: 'pipeline',
-    categoryLabel: 'Pipeline',
-    field: 'Sassandra-Sud (référence fictive)',
-    waterDepth: '850 m',
-    scope: 'Installation et tie-in d’une flowline 24"',
-    year: '2025',
-    image: media.projects['deepwater-flowline'],
+    slug: 'reparation-navale-sirius',
+    title: 'Réparation navale — Sirius',
+    category: 'naval',
+    categoryLabel: 'Naval',
+    location: 'Port d’Abidjan',
+    scope: 'Réparation complète coque et peinture',
+    year: '2024',
+    image: media.services.naval,
     summary:
-      'Pose d’une flowline 24" sur ~12 km, avec deux raccordements subsea dans une zone à courants forts.',
+      'Restauration complète d’un bateau : coque, mécanique naval, sablage et peinture.',
     presentation:
-      'Ce projet fictif porte sur la pose d’une flowline rigide 24" reliant un manifold subsea à une plateforme fixe en eaux profondes. La mission a mobilisé un pipe-lay vessel dédié et des équipes ROV en support permanent, sur une fenêtre météo courte.',
+      'Chantier de réparation navale complet sur le bateau Sirius : entretien coque, alignement moteur, sablage intégral et remise en peinture.',
     context:
-      'Le développement fictif « Sassandra-Sud » (référence de démonstration) se situe dans une zone à forts courants, avec un fond marin varié et des équipements subsea préexistants à contourner. La complexité résidait dans l’enchaînement rigoureux des opérations pour tenir la fenêtre météo.',
+      'Le bateau nécessitait une remise en état complète après plusieurs années d’exploitation. Le chantier s’est déroulé au port d’Abidjan avec accès marée.',
     challenge:
-      'Deux défis principaux : garantir la stabilité de la ligne pendant la pose malgré la houle et les courants, et exécuter deux tie-in subsea de précision sur des interfaces déjà installées. Chaque opération de raccordement était limitée à une fenêtre de moins de 6 heures.',
+      'Coordonner la mécanique navale, le sablage et la peinture dans un délai contraint par les fenêtres d’exploitation du client.',
     approach:
-      'Nous avons combiné un plan d’installation en cascade avec des ROV work-class en surveillance permanente et un système de reporting en temps réel entre le vessel et la base opérationnelle. Les tie-in ont été préparés en amont via une simulation full-scale à quai.',
-    gallery: media.projectGalleries['deepwater-flowline'],
-    specs: projectSpecs([
-      { label: 'Bloc', value: 'Bloc CI-DEMO-1 (fictif)' },
-      { label: 'Client', value: 'E&P Operator confidentiel (fictif)' },
-      { label: 'Durée', value: '11 semaines' },
-      { label: 'Vessel', value: 'Pipe-lay vessel S-lay' },
-      { label: 'Équipements', value: 'Flowline 24" · ROV work-class · Stinger' },
-      { label: 'Livrables', value: 'Ligne installée · As-built · Documentation d’intégrité' },
-      { label: 'Référentiels', value: 'API 1104 · DNV-OS-F101' },
-    ]),
+      'Mobilisation d’une équipe pluridisciplinaire (soudeurs, mécaniciens, peintres) et pilotage centralisé du planning.',
+    gallery: [media.services.naval, media.engineer, media.team],
+    specs: [
+      { label: 'Client', value: 'Armateur privé' },
+      { label: 'Durée', value: '6 semaines' },
+      { label: 'Moyens', value: 'Postes TIG/MIG · Compresseur d’air · Groupe électrogène' },
+      { label: 'Livrables', value: 'Bateau restauré et opérationnel' },
+    ],
     featured: true,
   },
   {
     id: 'p2',
-    slug: 'fpso-inspection',
-    title: 'Campagne d’inspection subsea sur FPSO',
-    category: 'subsea',
-    categoryLabel: 'Subsea',
-    field: 'FPSO Poseidon (référence fictive)',
-    waterDepth: '1 240 m',
-    scope: 'Inspection ROV visuelle et CP — ancrages, risers',
-    year: '2025',
-    image: media.projects['fpso-inspection'],
+    slug: 'tuyauterie-industrielle-koumassi',
+    title: 'Tuyauterie industrielle',
+    category: 'tuyauterie',
+    categoryLabel: 'Tuyauterie',
+    location: 'Zone industrielle — Abidjan',
+    scope: 'Fabrication et installation de tuyauteries',
+    year: '2024',
+    image: media.services.tuyauterie,
     summary:
-      'Campagne subsea complète sur un FPSO fictif : inspection ROV visuelle, cathodic protection, relevés d’anomalies.',
+      'Préfabrication en atelier et installation sur site de lignes industrielles.',
     presentation:
-      'Cette mission fictive porte sur une campagne d’inspection subsea d’un FPSO en production. Objectif : évaluer l’état des ancrages, des risers et des équipements sous-marins associés, en vue de préparer le plan IRM des trois années suivantes.',
+      'Fabrication en atelier puis installation sur site de lignes de tuyauterie industrielles avec raccordement, alignement et soudages certifiés.',
     context:
-      'Le FPSO Poseidon (référence fictive) est ancré par un système multi-lignes en 1 240 m d’eau. Après plusieurs années d’exploitation, une inspection approfondie était nécessaire pour cartographier l’état des ouvrages et prioriser les actions.',
+      'Le client cherchait à étendre son réseau de tuyauteries process avec des exigences fortes en qualité de soudure.',
     challenge:
-      'Combiner en une seule campagne l’inspection visuelle, les mesures de CP et le relevé sonar, sans interrompre la production. Trois systèmes d’acquisition différents devaient être synchronisés et corrélés pour produire un rapport unique.',
+      'Préparer les préfabrications à l’atelier tout en s’adaptant aux contraintes du site pendant l’installation.',
     approach:
-      'Deux ROV work-class opérant en parallèle depuis un DSV dédié, avec un poste de reporting unifié à bord. Nous avons produit une base documentaire par équipement, priorisée par criticité, remise au client dès la fin de mission.',
-    gallery: media.projectGalleries['fpso-inspection'],
-    specs: projectSpecs([
-      { label: 'Bloc', value: 'Bloc CI-DEMO-2 (fictif)' },
-      { label: 'Client', value: 'FPSO Operator confidentiel (fictif)' },
-      { label: 'Durée', value: '5 semaines' },
-      { label: 'Vessel', value: 'Diving Support Vessel (DSV)' },
-      { label: 'Équipements', value: '2× ROV work-class · CP probes · Sonar' },
-      { label: 'Livrables', value: 'Rapport d’inspection · Base d’intégrité · Plan IRM' },
-      { label: 'Référentiels', value: 'IMCA R 006 · DNV-RP-G101' },
-    ]),
+      'Découpe, chanfreinage et alignement en atelier, transport, montage sur site et tests d’étanchéité.',
+    gallery: [media.services.tuyauterie, media.engineer, media.team],
+    specs: [
+      { label: 'Client', value: 'Industriel local' },
+      { label: 'Durée', value: '8 semaines' },
+      { label: 'Moyens', value: 'Postes arc/TIG · Groupe électrogène · Équipements de coupe' },
+      { label: 'Livrables', value: 'Réseau installé et éprouvé' },
+    ],
   },
   {
     id: 'p3',
-    slug: 'riser-irm',
-    title: 'Programme IRM sur risers',
-    category: 'irm',
-    categoryLabel: 'IRM',
-    field: 'Champ Marlin-2 (référence fictive)',
-    waterDepth: '620 m',
-    scope: 'Inspection annuelle et réparation des risers',
+    slug: 'chaudronnerie-reservoir',
+    title: 'Confection de réservoir de stockage',
+    category: 'chaudronnerie',
+    categoryLabel: 'Chaudronnerie',
+    location: 'Site industriel — Abidjan',
+    scope: 'Conception et fabrication d’un réservoir sur mesure',
     year: '2024',
-    image: media.projects['riser-irm'],
+    image: media.services.chaudronnerie,
     summary:
-      'Programme IRM annuel sur risers rigides et flexibles : inspection, mesure d’anomalies, réparations ciblées.',
+      'Conception, fabrication et livraison d’un réservoir de stockage sur mesure.',
     presentation:
-      'Ce projet fictif est un contrat cadre IRM d’une durée d’un an couvrant l’ensemble des risers du champ Marlin-2. Le programme combine inspections planifiées, campagnes correctives ciblées et interventions à la demande.',
+      'Notre bureau d’études a conçu un réservoir de stockage adapté au procédé du client, réalisé en atelier avec plieuse, rouleuse et poste à souder.',
     context:
-      'Après une dizaine d’années d’exploitation, la campagne visait à renforcer la disponibilité des risers face à la corrosion et à la fatigue. Le client (fictif) attendait un plan d’action priorisé et une exécution rapide des réparations critiques.',
+      'Le client avait besoin d’un réservoir dédié pour son procédé, avec dimensions et matériaux spécifiques.',
     challenge:
-      'Concilier la fréquence élevée d’inspections, la mobilisation rapide sur anomalie et l’absence d’impact sur la production. Chaque intervention devait être documentée pour alimenter la base d’intégrité.',
+      'Fabriquer un ouvrage sur mesure en atelier et l’installer sur site avec les contraintes de manutention.',
     approach:
-      'Une équipe dédiée basée à San-Pédro (fictif), un ROV en stand-by permanent, et un tableau de bord d’intégrité mis à jour à chaque campagne. Les réparations ciblées ont été planifiées en fenêtres météo.',
-    gallery: media.projectGalleries['riser-irm'],
-    specs: projectSpecs([
-      { label: 'Bloc', value: 'Bloc CI-DEMO-3 (fictif)' },
-      { label: 'Client', value: 'Independent Operator (fictif)' },
-      { label: 'Durée', value: '12 mois' },
-      { label: 'Vessel', value: 'IMR / Stand-by vessel' },
-      { label: 'Équipements', value: 'ROV inspection · NDT · CP survey' },
-      { label: 'Livrables', value: 'Rapports IRM trimestriels · Base d’intégrité' },
-      { label: 'Référentiels', value: 'ISO 55001 · DNV-RP-G101' },
-    ]),
+      'Étude en bureau, découpe et pliage en atelier, roulage et soudure, transport et pose sur site.',
+    gallery: [media.services.chaudronnerie, media.engineer, media.team],
+    specs: [
+      { label: 'Client', value: 'Industriel local' },
+      { label: 'Durée', value: '10 semaines' },
+      { label: 'Moyens', value: 'Cisaille · Plieuse · Rouleuse · Poste électrode' },
+      { label: 'Livrables', value: 'Réservoir livré, installé et éprouvé' },
+    ],
   },
   {
     id: 'p4',
-    slug: 'umbilical-repair',
-    title: 'Intervention de réparation d’umbilical',
-    category: 'subsea',
-    categoryLabel: 'Subsea',
-    field: 'Bloc CI-99 (référence fictive)',
-    waterDepth: '740 m',
-    scope: 'Section et remplacement de connecteur d’umbilical',
+    slug: 'intervention-offshore',
+    title: 'Intervention offshore — pipeline',
+    category: 'onshore-offshore',
+    categoryLabel: 'Onshore / Offshore',
+    location: 'Champ offshore — Golfe de Guinée',
+    scope: 'Montage/démontage et épreuves',
     year: '2024',
-    image: media.projects['umbilical-repair'],
+    image: media.services.onshoreOffshore,
     summary:
-      'Intervention subsea rapide : diagnostic, section propre d’un umbilical et remplacement d’un connecteur.',
+      'Intervention offshore : montage/démontage, travaux mécaniques et épreuves.',
     presentation:
-      'Ce projet fictif est une intervention corrective sur un umbilical de contrôle après détection d’une anomalie électrique. La mission a été déclenchée sur un préavis court et a nécessité une mobilisation rapide des moyens marins.',
+      'Mission offshore d’intervention sur une infrastructure pétrolière : montage/démontage, travaux mécaniques et épreuves techniques.',
     context:
-      'L’umbilical relie un manifold subsea à la plateforme et transporte les signaux de contrôle et les fluides d’injection. Une dégradation du connecteur avait provoqué une chute de performance sur plusieurs puits.',
+      'L’opérateur avait besoin d’une équipe qualifiée et habilitée pour intervenir rapidement sur son installation offshore.',
     challenge:
-      'Réaliser une section propre à 740 m de profondeur, remonter la section endommagée, préparer un connecteur de rechange et le raccorder avec un torque contrôlé. Le tout dans une fenêtre météo réduite.',
+      'Mobiliser un personnel habilité et un équipement de soudage certifié dans un délai court, avec HSE renforcée.',
     approach:
-      'Nous avons mobilisé un IMR vessel avec ROV work-class et un connecteur pré-préparé à quai. La procédure a été simulée en surface avant descente, puis exécutée en deux plongées ROV successives.',
-    gallery: media.projectGalleries['umbilical-repair'],
-    specs: projectSpecs([
-      { label: 'Bloc', value: 'Bloc CI-99 (fictif)' },
-      { label: 'Client', value: 'E&P Operator confidentiel (fictif)' },
-      { label: 'Durée', value: '3 semaines' },
-      { label: 'Vessel', value: 'IMR vessel' },
-      { label: 'Équipements', value: 'ROV work-class · Connecteur de rechange · Torque tool' },
-      { label: 'Livrables', value: 'Rapport d’intervention · Umbilical rétabli' },
-      { label: 'Référentiels', value: 'IMCA R 006 · IMCA M 179' },
-    ]),
+      'Mobilisation d’une équipe certifiée, transport du matériel, exécution des travaux et remise en service.',
+    gallery: [media.services.onshoreOffshore, media.engineer, media.team],
+    specs: [
+      { label: 'Client', value: 'Opérateur offshore' },
+      { label: 'Durée', value: '4 semaines' },
+      { label: 'Moyens', value: 'Postes arc/TIG certifiés · Groupe électrogène' },
+      { label: 'Livrables', value: 'Installation remise en service' },
+    ],
   },
   {
     id: 'p5',
-    slug: 'platform-hookup',
-    title: 'Hook-up et commissioning de plateforme',
-    category: 'offshore',
-    categoryLabel: 'Offshore',
-    field: 'Plateforme Ivorien-Sud (référence fictive)',
-    waterDepth: '95 m',
-    scope: 'Hook-up des modules, complétion mécanique',
+    slug: 'usinage-piece-mecanique',
+    title: 'Usinage de pièces mécaniques',
+    category: 'usinage',
+    categoryLabel: 'Usinage',
+    location: 'Atelier S.I.M. — Koumassi',
+    scope: 'Fabrication de pièces sur plans',
     year: '2024',
-    image: media.projects['platform-hookup'],
+    image: media.services.usinage,
     summary:
-      'Hook-up et commissioning d’une plateforme fixe fictive : raccordements process, utilities et instrumentation.',
+      'Fabrication en atelier de pièces mécaniques d’après plans clients.',
     presentation:
-      'Ce projet fictif porte sur le hook-up et la mise en service d’une plateforme fixe. Les équipes ont raccordé les modules process, utilities et instrumentation puis conduit la complétion mécanique et les tests avant démarrage.',
+      'Réalisation en atelier de pièces mécaniques d’après plans : tournage, fraisage, perçage, alésage, avec contrôle qualité.',
     context:
-      'Après l’installation des modules par un HLV, la plateforme devait être raccordée et testée avant démarrage. Chaque système (process, utilities, instrumentation) devait être livré selon les procédures du client.',
+      'Plusieurs clients industriels ont sollicité S.I.M. pour la fabrication de pièces de rechange ou spéciales.',
     challenge:
-      'Coordonner plusieurs corps de métier sur un espace restreint, tenir un planning contraint par la fenêtre de démarrage et documenter chaque système à un niveau d’exigence élevé.',
+      'Tenir les tolérances demandées sur des matériaux variés, avec des délais courts.',
     approach:
-      'Un chef de projet unique côté KORIS ENERGY et un planning « one-team » ont permis de tenir les échéances. Les tests ont été priorisés par système et validés progressivement avant la remise finale.',
-    gallery: media.projectGalleries['platform-hookup'],
-    specs: projectSpecs([
-      { label: 'Bloc', value: 'Bloc CI-DEMO-5 (fictif)' },
-      { label: 'Client', value: 'Independent Operator (fictif)' },
-      { label: 'Durée', value: '8 semaines' },
-      { label: 'Vessel', value: 'Accommodation vessel' },
-      { label: 'Équipements', value: 'Outillage complétion mécanique · NDT · Instrumentation' },
-      { label: 'Livrables', value: 'Systèmes hooké et commissionés · MC certificate' },
-      { label: 'Référentiels', value: 'ISO 19901 · ABS' },
-    ]),
+      'Étude sur plan, préparation matière, usinage sur tour et fraiseuse, contrôle dimensionnel.',
+    gallery: [media.services.usinage, media.team, media.engineer],
+    specs: [
+      { label: 'Clients', value: 'Multiples industriels' },
+      { label: 'Machines', value: 'Tour parallèle · Fraiseuse · Perceuse radiale' },
+      { label: 'Contrôle', value: 'Dimensionnel selon plans' },
+    ],
   },
   {
     id: 'p6',
-    slug: 'manifold-retrieval',
-    title: 'Récupération et repose de manifold',
-    category: 'offshore',
-    categoryLabel: 'Offshore',
-    field: 'Champ Delta-1 (référence fictive)',
-    waterDepth: '980 m',
-    scope: 'Récupération et réinstallation d’un manifold subsea',
-    year: '2023',
-    image: media.projects['manifold-retrieval'],
+    slug: 'logistique-location-equipements',
+    title: 'Location d’équipements de chantier',
+    category: 'logistique',
+    categoryLabel: 'Logistique',
+    location: 'Chantier industriel — Abidjan',
+    scope: 'Location de grues et postes de soudage',
+    year: '2024',
+    image: media.services.logistique,
     summary:
-      'Récupération d’un manifold subsea, révision à quai, puis réinstallation dans une zone de champ voisine.',
+      'Mise à disposition de moyens de levage, de soudage et de groupes électrogènes.',
     presentation:
-      'Ce projet fictif est une opération de récupération d’un manifold subsea existant en vue d’une révision et d’un redéploiement sur une zone voisine du même champ. Une mission complexe alliant levage, révision et repose.',
+      'Location clé en main d’équipements de chantier : grues, camion à bras auxiliaires, postes autonomes de soudage, groupes électrogènes.',
     context:
-      'Le manifold, en service depuis plusieurs années, devait être révisé et repositionné pour desservir une nouvelle grappe de puits. L’opération devait être conduite sans perte de production sur le reste du champ.',
+      'Un donneur d’ordre avait besoin de renforcer temporairement son parc de matériels pour un chantier de plusieurs mois.',
     challenge:
-      'Le levage à 980 m nécessitait un plan rigoureux et un HLV équipé. La révision à quai devait tenir un délai serré, et la repose imposait une précision de positionnement millimétrique.',
+      'Fournir un parc adapté, avec maintenance et remplacement rapides en cas de panne.',
     approach:
-      'Nous avons mobilisé un HLV avec deep-water rigging, planifié la révision à quai en parallèle et utilisé un système de guidance ROV pour la repose. Chaque étape a été validée par un point de contrôle client.',
-    gallery: media.projectGalleries['manifold-retrieval'],
-    specs: projectSpecs([
-      { label: 'Bloc', value: 'Bloc CI-DEMO-6 (fictif)' },
-      { label: 'Client', value: 'E&P Operator confidentiel (fictif)' },
-      { label: 'Durée', value: '14 semaines' },
-      { label: 'Vessel', value: 'Heavy Lift Vessel (HLV)' },
-      { label: 'Équipements', value: 'Deep-water rigging · ROV work-class · Guidance system' },
-      { label: 'Livrables', value: 'Manifold révisé et repositionné' },
-      { label: 'Référentiels', value: 'IMCA M 179 · DNV-OS-F101' },
-    ]),
+      'Mobilisation du parc S.I.M. avec chauffeurs et opérateurs, maintenance quotidienne.',
+    gallery: [media.services.logistique, media.team, media.engineer],
+    specs: [
+      { label: 'Client', value: 'Industriel local' },
+      { label: 'Durée', value: 'Contrat de 6 mois' },
+      { label: 'Matériels', value: 'Grues · Camion à bras · Postes TIG/MIG · Groupes' },
+    ],
   },
 ];
 
 export const projectFilters = [
   { id: 'all', label: 'Tous' },
-  { id: 'pipeline', label: 'Pipeline' },
-  { id: 'subsea', label: 'Subsea' },
-  { id: 'offshore', label: 'Offshore' },
-  { id: 'irm', label: 'IRM' },
+  { id: 'tuyauterie', label: 'Tuyauterie' },
+  { id: 'chaudronnerie', label: 'Chaudronnerie' },
+  { id: 'usinage', label: 'Usinage' },
+  { id: 'onshore-offshore', label: 'Onshore/Offshore' },
+  { id: 'naval', label: 'Naval' },
+  { id: 'logistique', label: 'Logistique' },
 ] as const;
 
 export type ProjectFilter = (typeof projectFilters)[number]['id'];

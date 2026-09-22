@@ -8,7 +8,7 @@ export default function ProjectDetail() {
   const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
-    return <Navigate to="/projets" replace />;
+    return <Navigate to="/realisations" replace />;
   }
 
   return (
@@ -24,12 +24,12 @@ export default function ProjectDetail() {
             <span className="dot" aria-hidden="true">·</span>
             <span>{project.year}</span>
             <span className="dot" aria-hidden="true">·</span>
-            <span>{project.waterDepth}</span>
+            <span>{project.location}</span>
           </div>
           <h1 className="project-hero-title">{project.title}</h1>
           <p className="project-hero-summary">{project.summary}</p>
-          <Link to="/projets" className="project-hero-back mono">
-            ← Retour aux projets
+          <Link to="/realisations" className="project-hero-back mono">
+            ← Retour aux réalisations
           </Link>
         </div>
       </section>
@@ -38,19 +38,15 @@ export default function ProjectDetail() {
         <div className="container project-intro-inner">
           <div className="project-intro-body">
             <span className="eyebrow">Présentation</span>
-            <h2 className="section-title">Vue d’ensemble du projet.</h2>
+            <h2 className="section-title">Vue d’ensemble du chantier.</h2>
             <p className="project-intro-desc">{project.presentation}</p>
           </div>
           <aside className="project-specs-card">
             <span className="eyebrow">Fiche technique</span>
             <dl className="project-specs-detailed">
               <div>
-                <dt className="mono">Champ</dt>
-                <dd>{project.field}</dd>
-              </div>
-              <div>
-                <dt className="mono">Profondeur</dt>
-                <dd>{project.waterDepth}</dd>
+                <dt className="mono">Lieu</dt>
+                <dd>{project.location}</dd>
               </div>
               <div>
                 <dt className="mono">Périmètre</dt>
@@ -67,9 +63,6 @@ export default function ProjectDetail() {
                 </div>
               ))}
             </dl>
-            <p className="project-specs-note mono">
-              Données fictives — maquette de démonstration.
-            </p>
           </aside>
         </div>
       </section>
@@ -78,13 +71,13 @@ export default function ProjectDetail() {
         <div className="container">
           <div className="project-block">
             <span className="eyebrow">Contexte</span>
-            <h2 className="section-title">Environnement et contraintes.</h2>
+            <h2 className="section-title">Contexte et contraintes.</h2>
             <p className="project-block-desc">{project.context}</p>
           </div>
 
           <div className="project-block">
-            <span className="eyebrow">Défi technique</span>
-            <h2 className="section-title">Les principaux défis rencontrés.</h2>
+            <span className="eyebrow">Défi</span>
+            <h2 className="section-title">Le principal défi.</h2>
             <p className="project-block-desc">{project.challenge}</p>
           </div>
 
