@@ -33,6 +33,15 @@
   letter-spacing: 0.06em;
   color: var(--color-fg);
 }
+.logo-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+  border: 1px solid rgba(201, 169, 97, 0.4);
+}
 .logo-word-accent {
   color: var(--color-accent);
   font-weight: 500;
