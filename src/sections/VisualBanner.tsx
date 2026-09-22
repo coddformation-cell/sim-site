@@ -6,7 +6,7 @@ export default function VisualBanner() {
   return (
     <section className="visual-banner">
       <div className="visual-banner-media" aria-hidden="true">
-        <img src={media.engineer} alt="" loading="lazy" />
+        <img src={media.weldingWorkshop} alt="" loading="lazy" />
         <div className="visual-banner-overlay" />
       </div>
       <div className="container visual-banner-inner">
