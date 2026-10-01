@@ -39,23 +39,34 @@ export default function Contact() {
     setError(null);
     setSending(true);
     try {
-      const res = await fetch('/api/contact', {
+      // FormSubmit.co : service externe sans backend, fonctionne à
+      // l'identique sur GitHub Pages et Vercel. Le premier envoi déclenche
+      // un email de confirmation à simsoudure@gmail.com — il faut cliquer
+      // le lien une fois pour activer la réception avant que ça marche.
+      const res = await fetch(`https://formsubmit.co/ajax/${site.contact.email}`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          _subject: `Nouvelle demande de devis — ${form.service}`,
+          _cc: site.contact.emailSecretariat,
+          _template: 'table',
+          Nom: form.name,
+          Société: form.company || '—',
+          Email: form.email,
+          Téléphone: form.phone || '—',
+          'Service concerné': form.service,
+          Message: form.message,
+        }),
       });
-      const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        throw new Error(data.error || "L'envoi a échoué.");
+        throw new Error("L'envoi a échoué.");
       }
       setSent(true);
       setForm(emptyForm);
       setTimeout(() => setSent(false), 7000);
-    } catch (err) {
+    } catch {
       setError(
-        err instanceof Error
-          ? `${err.message} Vous pouvez aussi nous joindre directement au ${site.contact.phone1} ou par email à ${site.contact.email}.`
-          : "L'envoi a échoué. Merci de réessayer."
+        `L'envoi a échoué. Vous pouvez aussi nous joindre directement au ${site.contact.phone1} ou par email à ${site.contact.email}.`
       );
     } finally {
       setSending(false);
