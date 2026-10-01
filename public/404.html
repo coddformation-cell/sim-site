@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>S.I.M sarl</title>
+    <script type="text/javascript">
+      // GitHub Pages n'a pas de routage côté serveur : on encode l'URL
+      // demandée dans une query string, on redirige vers index.html, et
+      // index.html la décode pour laisser React Router prendre le relais.
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/?p=/' +
+        l.pathname.slice(1).replace(/&/g, '~and~') +
+        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
