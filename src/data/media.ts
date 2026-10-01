@@ -15,14 +15,16 @@
 // 810x1080) — à réserver aux emplacements verticaux ou carrés. Ne pas les
 // utiliser dans un bandeau large (object-fit:cover écraserait le sujet).
 
+import { withBase } from '../lib/asset';
+
 export const media = {
-  logo: '/logo-sim.jpg',
-  team: '/catalogue/9.jpeg',
-  engineer: '/catalogue/8.jpeg',
-  weldingWorkshop: '/images/welding-workshop.jpg',
+  logo: withBase('/logo-sim.jpg'),
+  team: withBase('/catalogue/9.jpeg'),
+  engineer: withBase('/catalogue/8.jpeg'),
+  weldingWorkshop: withBase('/images/welding-workshop.jpg'),
   // Photo hero : étincelles de soudure, grande zone sombre à gauche
   // idéale pour la lisibilité du texte (2400x1350, 16:9).
-  heroWelding: '/images/hero-welding-sparks.jpg',
+  heroWelding: withBase('/images/hero-welding-sparks.jpg'),
   // Photo équipe industrielle — page À propos (2000x1333, 16:9).
-  teamIndustrial: '/images/team-industrial.jpg',
+  teamIndustrial: withBase('/images/team-industrial.jpg'),
 };

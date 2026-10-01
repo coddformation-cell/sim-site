@@ -1,3 +1,5 @@
+import { withBase } from '../lib/asset';
+
 export type SIMService = {
   id: string;
   slug: string;
@@ -16,7 +18,7 @@ export type SIMService = {
 export const services: SIMService[] = [
   {
     id: 'tuyauterie',
-    image: '/images/services/tuyauterie.jpg',
+    image: withBase('/images/services/tuyauterie.jpg'),
     slug: 'tuyauterie',
     index: '01',
     title: 'Tuyauterie',
@@ -38,7 +40,7 @@ export const services: SIMService[] = [
   },
   {
     id: 'chaudronnerie',
-    image: '/images/services/chaudronnerie.jpg',
+    image: withBase('/images/services/chaudronnerie.jpg'),
     slug: 'chaudronnerie',
     index: '02',
     title: 'Chaudronnerie',
@@ -72,7 +74,7 @@ export const services: SIMService[] = [
   },
   {
     id: 'usinage',
-    image: '/images/services/usinage.jpg',
+    image: withBase('/images/services/usinage.jpg'),
     slug: 'usinage',
     index: '03',
     title: 'Usinage',
@@ -98,7 +100,7 @@ export const services: SIMService[] = [
   },
   {
     id: 'onshore-offshore',
-    image: '/images/services/onshore-offshore.jpg',
+    image: withBase('/images/services/onshore-offshore.jpg'),
     slug: 'onshore-offshore',
     index: '04',
     title: 'Onshore / Offshore',
@@ -122,7 +124,7 @@ export const services: SIMService[] = [
   },
   {
     id: 'naval',
-    image: '/images/services/naval.jpg',
+    image: withBase('/images/services/naval.jpg'),
     slug: 'naval',
     index: '05',
     title: 'Construction & Réparation Navale',
@@ -150,7 +152,7 @@ export const services: SIMService[] = [
   },
   {
     id: 'echangeur-aero',
-    image: '/images/services/echangeur-aero.jpg',
+    image: withBase('/images/services/echangeur-aero.jpg'),
     slug: 'echangeur-aero',
     index: '06',
     title: 'Échangeur & Aéro',
@@ -173,7 +175,7 @@ export const services: SIMService[] = [
   },
   {
     id: 'logistique',
-    image: '/images/services/logistique.jpg',
+    image: withBase('/images/services/logistique.jpg'),
     slug: 'logistique',
     index: '07',
     title: 'Logistique',

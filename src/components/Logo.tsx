@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { withBase } from '../lib/asset';
 
 type Props = {
   compact?: boolean;
@@ -9,7 +10,7 @@ export default function Logo({ compact = false }: Props) {
   return (
     <Link to="/" className="logo" aria-label="S.I.M sarl — Accueil">
       <img
-        src="/logo-sim.jpg"
+        src={withBase('/logo-sim.jpg')}
         alt="S.I.M sarl — Soudure Industrielle et Maritime"
         className="logo-mark"
         width="42"
