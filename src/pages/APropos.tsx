@@ -3,6 +3,7 @@ import PageHeader from '../components/PageHeader';
 import { values, homeAboutIntro } from '../data/company';
 import { site } from '../data/site';
 import { media } from '../data/media';
+import DirectorSection from '../sections/DirectorSection';
 
 export default function APropos() {
   return (
@@ -56,6 +57,8 @@ export default function APropos() {
           </aside>
         </div>
       </section>
+
+      <DirectorSection />
 
       <section className="section values-section">
         <div className="container">

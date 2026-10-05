@@ -18,7 +18,7 @@ export type SIMService = {
 export const services: SIMService[] = [
   {
     id: 'tuyauterie',
-    image: withBase('/images/services/tuyauterie.jpg'),
+    image: withBase('/images/chantiers/tuyauterie-atex.jpg'),
     slug: 'tuyauterie',
     index: '01',
     title: 'Tuyauterie',
@@ -40,7 +40,7 @@ export const services: SIMService[] = [
   },
   {
     id: 'chaudronnerie',
-    image: withBase('/images/services/chaudronnerie.jpg'),
+    image: withBase('/images/chantiers/cuve-equipe-machines.jpg'),
     slug: 'chaudronnerie',
     index: '02',
     title: 'Chaudronnerie',
@@ -100,7 +100,7 @@ export const services: SIMService[] = [
   },
   {
     id: 'onshore-offshore',
-    image: withBase('/images/services/onshore-offshore.jpg'),
+    image: withBase('/images/chantiers/offshore-pont-groupe.jpg'),
     slug: 'onshore-offshore',
     index: '04',
     title: 'Onshore / Offshore',
@@ -124,7 +124,7 @@ export const services: SIMService[] = [
   },
   {
     id: 'naval',
-    image: withBase('/images/services/naval.jpg'),
+    image: withBase('/images/chantiers/naval-chantier-coques.jpg'),
     slug: 'naval',
     index: '05',
     title: 'Construction & Réparation Navale',
@@ -152,7 +152,7 @@ export const services: SIMService[] = [
   },
   {
     id: 'echangeur-aero',
-    image: withBase('/images/services/echangeur-aero.jpg'),
+    image: withBase('/images/chantiers/unite-panorama.jpg'),
     slug: 'echangeur-aero',
     index: '06',
     title: 'Échangeur & Aéro',
@@ -175,7 +175,7 @@ export const services: SIMService[] = [
   },
   {
     id: 'logistique',
-    image: withBase('/images/services/logistique.jpg'),
+    image: withBase('/images/chantiers/transport-tubes.jpg'),
     slug: 'logistique',
     index: '07',
     title: 'Logistique',

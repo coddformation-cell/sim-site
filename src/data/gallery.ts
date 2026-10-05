@@ -1,54 +1,106 @@
 import { withBase } from '../lib/asset';
+import { rawPhotos } from './gallery.generated';
+
+export type PhotoTag =
+  | 'tuyauterie'
+  | 'chaudronnerie'
+  | 'onshore-offshore'
+  | 'naval'
+  | 'echangeur-aero'
+  | 'logistique'
+  | 'soudure'
+  | 'sous-marin';
 
 export type FieldPhoto = {
+  slug: string;
   src: string;
+  thumb: string;
   alt: string;
   width: number;
   height: number;
+  thumbWidth: number;
+  thumbHeight: number;
+  tags: PhotoTag[];
 };
 
-const photo = (slug: string, alt: string, width: number, height: number): FieldPhoto => ({
-  src: withBase(`/images/chantiers/${slug}.jpg`),
-  alt,
-  width,
-  height,
-});
-
-// Photos réelles de chantiers S.I.M, transmises par le client. Légendes
-// strictement descriptives de ce qu'on voit (aucun nom de client, de lieu
-// ni de date inventé). Métadonnées EXIF/GPS retirées au traitement.
-export const fieldPhotos: FieldPhoto[] = [
-  photo('cuve-interieur', "Intérieur d'une cuve de stockage", 1020, 765),
-  photo('soudeur-etincelles', 'Soudeur en action', 744, 992),
-  photo('cuve-equipe-soudure', "Équipe de soudeurs au travail sur le fond d'une cuve", 1600, 823),
-  photo('atelier-conduite', "Préparation d'une conduite en atelier", 900, 1600),
-  photo('offshore-pont', "Matériel sur le pont d'une plateforme en mer", 1600, 823),
-  photo('cuve-soudage-toles', 'Soudage de tôles sur un fond de cuve', 1600, 823),
-  photo('tuyauterie-vanne', 'Intervention sur une vanne et sa tuyauterie', 984, 1600),
-  photo('sous-marin-2', 'Inspection sous-marine', 1600, 1200),
-  photo('cuve-levage-grue', "Levage d'un élément de cuve par grue", 984, 1600),
-  photo('tuyauterie-atex', 'Réseau de tuyauterie industrielle en zone ATEX', 1600, 823),
-  photo('soudeur-chantier', 'Soudage sur chantier', 1600, 823),
-  photo('technicien-cuve', 'Technicien en tenue de chantier près d’une cuve', 765, 1020),
-  photo('cuve-structure-dessus', 'Structure de cuve en cours de montage, vue de dessus', 1600, 823),
-  photo('grue-mobile', 'Grue mobile en opération', 984, 1600),
-  photo('offshore-materiel', 'Groupe électrogène et échafaudages sur une plateforme en mer', 1600, 823),
-  photo('cuve-echafaudage', 'Chantier de cuve avec échafaudage', 1600, 823),
-  photo('sous-marin-1', 'Intervention sous-marine sur une structure métallique', 1600, 1200),
-  photo('transport-tubes', 'Transport de tubes en acier sur remorque', 1600, 823),
-  photo('cuve-fond-eclaire', "Travaux sur le fond d'une cuve", 1600, 823),
+export const photoCategories: { tag: PhotoTag; label: string }[] = [
+  { tag: 'tuyauterie', label: 'Tuyauterie' },
+  { tag: 'chaudronnerie', label: 'Chaudronnerie' },
+  { tag: 'soudure', label: 'Soudure' },
+  { tag: 'onshore-offshore', label: 'Onshore / Offshore' },
+  { tag: 'sous-marin', label: 'Sous-marin' },
+  { tag: 'naval', label: 'Naval' },
+  { tag: 'echangeur-aero', label: 'Échangeur & Aéro' },
+  { tag: 'logistique', label: 'Logistique' },
 ];
 
-const bySrc = (slug: string) => {
-  const src = withBase(`/images/chantiers/${slug}.jpg`);
-  const found = fieldPhotos.find((p) => p.src === src);
-  if (!found) throw new Error(`Photo chantier introuvable : ${slug}`);
+// Photos réelles de chantiers S.I.M, transmises par le client (archives
+// d'images, film et diaporama de présentation). Légendes strictement
+// descriptives de ce qu'on voit — aucun nom de client, de lieu ni de date
+// inventé. EXIF/GPS retirés, filigrane du téléphone recadré.
+const toPhoto = (p: (typeof rawPhotos)[number]): FieldPhoto => ({
+  slug: p.slug,
+  src: withBase(`/images/chantiers/${p.slug}.jpg`),
+  thumb: withBase(`/images/chantiers/${p.slug}-sm.jpg`),
+  alt: p.alt,
+  width: p.width,
+  height: p.height,
+  thumbWidth: p.thumbWidth,
+  thumbHeight: p.thumbHeight,
+  tags: p.tags as PhotoTag[],
+});
+
+const all = rawPhotos.map(toPhoto);
+const bySlug = new Map(all.map((p) => [p.slug, p]));
+
+export const photo = (slug: string): FieldPhoto => {
+  const found = bySlug.get(slug);
+  if (!found) throw new Error(`Photo introuvable : ${slug}`);
   return found;
 };
 
+// Mélange les domaines (au lieu d'enchaîner 20 photos de cuves d'affilée).
+const interleave = (photos: FieldPhoto[]): FieldPhoto[] => {
+  const groups = new Map<string, FieldPhoto[]>();
+  for (const p of photos) {
+    const key = p.tags[0] ?? 'autre';
+    groups.set(key, [...(groups.get(key) ?? []), p]);
+  }
+  const lists = [...groups.values()];
+  const out: FieldPhoto[] = [];
+  for (let i = 0; lists.some((l) => i < l.length); i++) {
+    for (const l of lists) if (i < l.length) out.push(l[i]);
+  }
+  return out;
+};
+
+const isDirector = (slug: string) => slug.startsWith('dg-');
+const isTeam = (slug: string) => slug.startsWith('equipe-');
+
+export const fieldPhotos: FieldPhoto[] = interleave(
+  all.filter((p) => !isDirector(p.slug) && !isTeam(p.slug))
+);
+
+export const photosForService = (serviceId: string): FieldPhoto[] => {
+  const tags: PhotoTag[] =
+    serviceId === 'onshore-offshore' ? ['onshore-offshore', 'sous-marin'] : [serviceId as PhotoTag];
+  return fieldPhotos.filter((p) => p.tags.some((t) => tags.includes(t)));
+};
+
 export const homeFieldPhotos: FieldPhoto[] = [
-  bySrc('cuve-interieur'),
-  bySrc('cuve-soudage-toles'),
-  bySrc('offshore-pont'),
-  bySrc('tuyauterie-atex'),
-];
+  'cuve-radiale-dessus',
+  'offshore-pont-groupe',
+  'tuyauterie-equipe-montage',
+  'soudeur-etincelles',
+  'naval-cale',
+  'sous-marin-soudure',
+  'grue-chantier',
+  'cuve-equipe-machines',
+].map(photo);
+
+export const directorPhotos = {
+  portrait: photo('dg-entretien'),
+  trophees: photo('dg-trophees'),
+  withTrophies: photo('dg-portrait-trophees'),
+  poster: photo('dg-affiche-prix'),
+};

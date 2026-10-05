@@ -47,7 +47,7 @@ export default function PhotoGallery({ photos }: Props) {
     <>
       <ul className="photo-gallery" role="list">
         {photos.map((p, i) => (
-          <li key={p.src} className="photo-gallery-item" data-reveal>
+          <li key={p.src} className="photo-gallery-item">
             <button
               type="button"
               className="photo-gallery-btn"
@@ -55,10 +55,10 @@ export default function PhotoGallery({ photos }: Props) {
               aria-label={`Agrandir la photo : ${p.alt}`}
             >
               <img
-                src={p.src}
+                src={p.thumb}
                 alt={p.alt}
-                width={p.width}
-                height={p.height}
+                width={p.thumbWidth}
+                height={p.thumbHeight}
                 loading="lazy"
                 decoding="async"
               />

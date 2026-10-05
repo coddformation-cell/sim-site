@@ -18,10 +18,10 @@ export default function FieldStrip() {
           {homeFieldPhotos.map((p) => (
             <li key={p.src} className="field-strip-item" data-reveal>
               <img
-                src={p.src}
+                src={p.thumb}
                 alt={p.alt}
-                width={p.width}
-                height={p.height}
+                width={p.thumbWidth}
+                height={p.thumbHeight}
                 loading="lazy"
                 decoding="async"
               />

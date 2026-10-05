@@ -1,4 +1,6 @@
 import { Link, Navigate, useParams } from 'react-router-dom';
+import PhotoGallery from '../components/PhotoGallery';
+import { photosForService } from '../data/gallery';
 import { services } from '../data/services';
 import CTAFinal from '../sections/CTAFinal';
 
@@ -9,6 +11,8 @@ export default function ServiceDetail() {
   if (!service) {
     return <Navigate to="/services" replace />;
   }
+
+  const photos = photosForService(service.id);
 
   return (
     <>
@@ -71,6 +75,21 @@ export default function ServiceDetail() {
           </aside>
         </div>
       </section>
+
+      {photos.length > 0 && (
+        <section className="section service-photos-section">
+          <div className="container">
+            <header className="section-head">
+              <span className="eyebrow">Sur le terrain</span>
+              <h2 className="section-title">{service.title} en images.</h2>
+              <p className="section-lead">
+                Photos de nos équipes en intervention. Cliquez sur une photo pour l’agrandir.
+              </p>
+            </header>
+            <PhotoGallery photos={photos} />
+          </div>
+        </section>
+      )}
 
       <CTAFinal />
     </>

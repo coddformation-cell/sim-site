@@ -2,9 +2,10 @@
 // - logo-sim.jpg  = logo officiel S.I.M sarl
 // - catalogue/8.jpeg = photos ingénieur + soudeur (SANS texte catalogue)
 // - catalogue/9.jpeg = photos équipe complète + soudeur (SANS texte catalogue)
-// - images/welding-workshop.jpg = photo d'illustration (soudure industrielle,
-//   format paysage 16:9) utilisée pour la bannière visuelle. Photo de stock
-//   libre de droits (Unsplash), à but d'ambiance — pas un chantier S.I.M réel.
+// - images/chantiers/* = vraies photos de chantiers S.I.M (voir data/gallery.ts)
+// - images/hero-welding-sparks.jpg = photo d'ambiance libre de droits (Unsplash)
+//   pour le hero, et images/services/usinage.jpg idem : aucune photo
+//   d'usinage réelle n'existe dans les archives du client.
 //
 // Les pages du catalogue (1-7, 10) contiennent du texte imprimé
 // ("AVANT", "APRÈS", "DOMAINES DE COMPÉTENCES"...) et NE doivent PAS être
@@ -21,10 +22,10 @@ export const media = {
   logo: withBase('/logo-sim.jpg'),
   team: withBase('/catalogue/9.jpeg'),
   engineer: withBase('/catalogue/8.jpeg'),
-  weldingWorkshop: withBase('/images/welding-workshop.jpg'),
+  weldingWorkshop: withBase('/images/chantiers/offshore-grue-mer.jpg'),
   // Photo hero : étincelles de soudure, grande zone sombre à gauche
   // idéale pour la lisibilité du texte (2400x1350, 16:9).
   heroWelding: withBase('/images/hero-welding-sparks.jpg'),
-  // Photo équipe industrielle — page À propos (2000x1333, 16:9).
-  teamIndustrial: withBase('/images/team-industrial.jpg'),
+  // Bandeaux : vraies photos de chantier (page À propos / bandeau d'accueil).
+  teamIndustrial: withBase('/images/chantiers/cuve-grande-equipe.jpg'),
 };

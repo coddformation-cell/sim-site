@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
-import PhotoGallery from '../components/PhotoGallery';
+import FilterableGallery from '../components/FilterableGallery';
 import { fieldPhotos } from '../data/gallery';
 import { projects } from '../data/projects';
 import { services } from '../data/services';
@@ -27,7 +27,7 @@ export default function Projets() {
               soudure, levage, plateformes en mer et travaux sous-marins.
             </p>
           </header>
-          <PhotoGallery photos={fieldPhotos} />
+          <FilterableGallery photos={fieldPhotos} />
         </div>
       </section>
 
