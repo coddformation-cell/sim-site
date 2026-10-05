@@ -96,6 +96,7 @@ export const homeFieldPhotos: FieldPhoto[] = [
   'sous-marin-soudure',
   'grue-chantier',
   'cuve-equipe-machines',
+  'cuve-soudage-toles',
 ].map(photo);
 
 export const directorPhotos = {
@@ -104,3 +105,19 @@ export const directorPhotos = {
   withTrophies: photo('dg-portrait-trophees'),
   poster: photo('dg-affiche-prix'),
 };
+
+// Photo mise en avant sous la présentation de chaque service (page détail).
+const asideSlugs: Record<string, string> = {
+  tuyauterie: 'tuyauterie-equipe-montage',
+  chaudronnerie: 'cuve-radiale-dessus',
+  'onshore-offshore': 'offshore-grue-mer',
+  naval: 'naval-cale',
+  'echangeur-aero': 'recipient-technicien',
+  logistique: 'grue-chantier',
+};
+export const serviceAside = (serviceId: string): FieldPhoto | null => {
+  const slug = asideSlugs[serviceId];
+  return slug && bySlug.has(slug) ? photo(slug) : null;
+};
+
+export const teamPhotos: FieldPhoto[] = ['cuve-grande-equipe', 'cuve-radiale-equipe', 'cuve-equipe-fond'].map(photo);

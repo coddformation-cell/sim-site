@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
 import { site } from '../data/site';
+import { photo, teamPhotos } from '../data/gallery';
 
 export default function RejoignezNous() {
   return (
@@ -9,6 +10,7 @@ export default function RejoignezNous() {
         eyebrow="Rejoignez-nous"
         title="Carrières, candidatures spontanées et partenariats."
         lead="S.I.M sarl accueille les candidatures de professionnels qualifiés du secteur industriel et maritime, ainsi que les propositions de partenariat."
+        image={photo('cuve-assemblage-tole').src}
       />
 
       <section className="section join-section">
@@ -48,6 +50,17 @@ export default function RejoignezNous() {
               Prendre contact
             </Link>
           </article>
+        </div>
+
+        <div className="container join-team">
+          <h2 className="join-team-title">Nos équipes sur le terrain.</h2>
+          <ul className="join-team-grid" role="list">
+            {teamPhotos.map((p) => (
+              <li key={p.src}>
+                <img src={p.thumb} alt={p.alt} width={p.thumbWidth} height={p.thumbHeight} loading="lazy" decoding="async" />
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </>

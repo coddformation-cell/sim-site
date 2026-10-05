@@ -30,13 +30,6 @@ export const manifestoBlock = {
   ],
 };
 
-export const visualBannerContent = {
-  eyebrow: '',
-  title: 'Sept expertises complémentaires au service de l’industrie.',
-  cta: 'Voir nos services',
-  ctaTo: '/services',
-};
-
 export const homeServicesIntro = {
   eyebrow: 'Nos services',
   title: 'Sept expertises pour vos chantiers industriels et maritimes.',

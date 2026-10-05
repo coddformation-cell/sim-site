@@ -12,7 +12,7 @@ import Contact from './pages/Contact';
 import './App.css';
 
 const REVEAL_SELECTOR =
-  '[data-reveal], .section-head, .home-service-card, .services-alt-row, .value-card, .service-cover, .empty-state';
+  '[data-reveal], .section-head, .home-service-card, .services-alt-row, .value-card, .service-cover, .empty-state, .join-card';
 
 function RouteScrollReset() {
   const { pathname } = useLocation();

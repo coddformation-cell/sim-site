@@ -1,12 +1,40 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { site } from '../data/site';
-import { media } from '../data/media';
+import { withBase } from '../lib/asset';
+
+const SLIDES = [1, 2, 3, 4].map((n) => ({
+  lg: withBase(`/images/hero/hero-${n}.jpg`),
+  md: withBase(`/images/hero/hero-${n}-md.jpg`),
+}));
+
+const ROTATE_MS = 7000;
 
 export default function Hero() {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const id = window.setInterval(() => setActive((i) => (i + 1) % SLIDES.length), ROTATE_MS);
+    return () => window.clearInterval(id);
+  }, []);
+
   return (
     <section className="hero">
       <div className="hero-bg" aria-hidden="true">
-        <img src={media.heroWelding} alt="" className="hero-bg-photo" loading="eager" />
+        {SLIDES.map((s, i) => (
+          <img
+            key={s.lg}
+            src={s.md}
+            srcSet={`${s.md} 1200w, ${s.lg} 2400w`}
+            sizes="100vw"
+            alt=""
+            className={`hero-bg-photo ${i === active ? 'is-active' : ''}`}
+            loading={i === 0 ? 'eager' : 'lazy'}
+            fetchPriority={i === 0 ? 'high' : 'auto'}
+            decoding="async"
+          />
+        ))}
         <div className="hero-bg-gradient" />
       </div>
 
@@ -51,6 +79,19 @@ export default function Hero() {
             <dd>Koumassi — Abidjan · Côte d’Ivoire</dd>
           </div>
         </dl>
+
+        <div className="hero-dots" role="group" aria-label="Photos de chantier">
+          {SLIDES.map((s, i) => (
+            <button
+              key={s.lg}
+              type="button"
+              className={`hero-dot ${i === active ? 'is-active' : ''}`}
+              aria-label={`Afficher la photo ${i + 1}`}
+              aria-pressed={i === active}
+              onClick={() => setActive(i)}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
+import Lightbox from './Lightbox';
 import type { FieldPhoto } from '../data/gallery';
 
 type Props = {
@@ -7,13 +8,8 @@ type Props = {
 
 export default function PhotoGallery({ photos }: Props) {
   const [active, setActive] = useState<number | null>(null);
-  const closeRef = useRef<HTMLButtonElement>(null);
   const triggerRef = useRef<HTMLElement | null>(null);
 
-  const open = (index: number, trigger: HTMLElement) => {
-    triggerRef.current = trigger;
-    setActive(index);
-  };
   const close = useCallback(() => {
     setActive(null);
     triggerRef.current?.focus();
@@ -23,23 +19,8 @@ export default function PhotoGallery({ photos }: Props) {
       setActive((i) => (i === null ? i : (i + delta + photos.length) % photos.length)),
     [photos.length]
   );
-
-  useEffect(() => {
-    if (active === null) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') close();
-      else if (e.key === 'ArrowRight') step(1);
-      else if (e.key === 'ArrowLeft') step(-1);
-    };
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    window.addEventListener('keydown', onKey);
-    closeRef.current?.focus();
-    return () => {
-      window.removeEventListener('keydown', onKey);
-      document.body.style.overflow = previousOverflow;
-    };
-  }, [active, close, step]);
+  const prev = useCallback(() => step(-1), [step]);
+  const next = useCallback(() => step(1), [step]);
 
   const current = active === null ? null : photos[active];
 
@@ -51,7 +32,10 @@ export default function PhotoGallery({ photos }: Props) {
             <button
               type="button"
               className="photo-gallery-btn"
-              onClick={(e) => open(i, e.currentTarget)}
+              onClick={(e) => {
+                triggerRef.current = e.currentTarget;
+                setActive(i);
+              }}
               aria-label={`Agrandir la photo : ${p.alt}`}
             >
               <img
@@ -68,54 +52,16 @@ export default function PhotoGallery({ photos }: Props) {
       </ul>
 
       {current && (
-        <div
-          className="lightbox"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Visionneuse de photos"
-          onClick={close}
+        <Lightbox
+          label="Visionneuse de photos"
+          caption={current.alt}
+          counter={`${(active ?? 0) + 1} / ${photos.length}`}
+          onClose={close}
+          onPrev={prev}
+          onNext={next}
         >
-          <button
-            ref={closeRef}
-            type="button"
-            className="lightbox-close"
-            onClick={close}
-            aria-label="Fermer la visionneuse"
-          >
-            Fermer <span aria-hidden="true">✕</span>
-          </button>
-          <button
-            type="button"
-            className="lightbox-nav lightbox-prev"
-            onClick={(e) => {
-              e.stopPropagation();
-              step(-1);
-            }}
-            aria-label="Photo précédente"
-          >
-            <span aria-hidden="true">←</span>
-          </button>
-          <figure className="lightbox-figure" onClick={(e) => e.stopPropagation()}>
-            <img src={current.src} alt={current.alt} />
-            <figcaption>
-              <span>{current.alt}</span>
-              <span className="mono">
-                {(active ?? 0) + 1} / {photos.length}
-              </span>
-            </figcaption>
-          </figure>
-          <button
-            type="button"
-            className="lightbox-nav lightbox-next"
-            onClick={(e) => {
-              e.stopPropagation();
-              step(1);
-            }}
-            aria-label="Photo suivante"
-          >
-            <span aria-hidden="true">→</span>
-          </button>
-        </div>
+          <img src={current.src} alt={current.alt} />
+        </Lightbox>
       )}
     </>
   );

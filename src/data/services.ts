@@ -124,7 +124,7 @@ export const services: SIMService[] = [
   },
   {
     id: 'naval',
-    image: withBase('/images/chantiers/naval-chantier-coques.jpg'),
+    image: withBase('/images/chantiers/naval-port-vedette.jpg'),
     slug: 'naval',
     index: '05',
     title: 'Construction & Réparation Navale',

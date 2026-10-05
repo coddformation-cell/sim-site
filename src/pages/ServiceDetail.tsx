@@ -1,6 +1,8 @@
 import { Link, Navigate, useParams } from 'react-router-dom';
 import PhotoGallery from '../components/PhotoGallery';
-import { photosForService } from '../data/gallery';
+import VideoGallery from '../components/VideoGallery';
+import { photosForService, serviceAside } from '../data/gallery';
+import { videosForService } from '../data/videos';
 import { services } from '../data/services';
 import CTAFinal from '../sections/CTAFinal';
 
@@ -13,6 +15,8 @@ export default function ServiceDetail() {
   }
 
   const photos = photosForService(service.id);
+  const clips = videosForService(service.id);
+  const aside = serviceAside(service.id);
 
   return (
     <>
@@ -40,13 +44,19 @@ export default function ServiceDetail() {
             <h2 className="section-title">Présentation.</h2>
             <p className="service-detail-desc">{service.description}</p>
             <div className="service-detail-actions">
-              <Link to="/contact" className="btn btn-primary">
+              <Link to={`/contact?service=${service.slug}`} className="btn btn-primary">
                 Demander un devis
               </Link>
               <Link to="/services" className="btn btn-ghost">
                 Voir tous les services
               </Link>
             </div>
+            {aside && (
+              <figure className="service-detail-figure">
+                <img src={aside.src} alt={aside.alt} width={aside.width} height={aside.height} loading="lazy" decoding="async" />
+                <figcaption className="mono">{aside.alt}</figcaption>
+              </figure>
+            )}
           </div>
 
           <aside className="service-detail-side">
@@ -75,6 +85,18 @@ export default function ServiceDetail() {
           </aside>
         </div>
       </section>
+
+      {clips.length > 0 && (
+        <section className="section service-videos-section">
+          <div className="container">
+            <header className="section-head">
+              <span className="eyebrow">En vidéo</span>
+              <h2 className="section-title">{service.title} en action.</h2>
+            </header>
+            <VideoGallery videos={clips} />
+          </div>
+        </section>
+      )}
 
       {photos.length > 0 && (
         <section className="section service-photos-section">

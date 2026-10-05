@@ -1,7 +1,10 @@
 import { useState, type FormEvent } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
 import SocialLinks from '../components/SocialLinks';
 import { site } from '../data/site';
+import { services } from '../data/services';
+import { photo } from '../data/gallery';
 
 type FormState = {
   name: string;
@@ -17,18 +20,23 @@ const emptyForm: FormState = {
   company: '',
   email: '',
   phone: '',
-  service: 'Tuyauterie',
+  service: '',
   message: '',
 };
 
 export default function Contact() {
-  const [form, setForm] = useState<FormState>(emptyForm);
+  const [params] = useSearchParams();
+  const requested = params.get('service');
+  const initialService = services.find((x) => x.slug === requested)?.title ?? '';
+  const [form, setForm] = useState<FormState>({ ...emptyForm, service: initialService });
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [sending, setSending] = useState(false);
 
   const update = <K extends keyof FormState>(key: K, value: FormState[K]) =>
     setForm((f) => ({ ...f, [key]: value }));
+
+  const serviceLabel = form.service || 'Non précisé';
 
   const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -47,14 +55,14 @@ export default function Contact() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          _subject: `Nouvelle demande de devis — ${form.service}`,
+          _subject: `Nouvelle demande de devis — ${serviceLabel}`,
           _cc: site.contact.emailSecretariat,
           _template: 'table',
           Nom: form.name,
           Société: form.company || '—',
           Email: form.email,
           Téléphone: form.phone || '—',
-          'Service concerné': form.service,
+          'Service concerné': serviceLabel,
           Message: form.message,
         }),
       });
@@ -62,7 +70,7 @@ export default function Contact() {
         throw new Error("L'envoi a échoué.");
       }
       setSent(true);
-      setForm(emptyForm);
+      setForm({ ...emptyForm, service: initialService });
       setTimeout(() => setSent(false), 7000);
     } catch {
       setError(
@@ -79,6 +87,7 @@ export default function Contact() {
         eyebrow="Contact"
         title="Demandez un devis ou discutons de votre projet."
         lead="Notre équipe revient vers vous rapidement pour cadrer votre besoin et vous proposer une réponse adaptée."
+        image={photo('unite-panorama').src}
       />
 
       <section className="section contact-section">
@@ -165,22 +174,26 @@ export default function Contact() {
               </label>
             </div>
 
-            <label className="field">
-              <span>Service concerné</span>
-              <select
-                value={form.service}
-                onChange={(e) => update('service', e.target.value)}
-              >
-                <option>Tuyauterie</option>
-                <option>Chaudronnerie</option>
-                <option>Usinage</option>
-                <option>Onshore / Offshore</option>
-                <option>Construction & Réparation Navale</option>
-                <option>Échangeur & Aéro</option>
-                <option>Logistique</option>
-                <option>Autre</option>
-              </select>
-            </label>
+            <fieldset className="field service-picker">
+              <legend>Service concerné</legend>
+              <div className="service-picker-options">
+                {[...services.map((s) => s.title), 'Autre'].map((label) => (
+                  <label
+                    key={label}
+                    className={`service-chip ${form.service === label ? 'is-selected' : ''}`}
+                  >
+                    <input
+                      type="radio"
+                      name="service"
+                      value={label}
+                      checked={form.service === label}
+                      onChange={() => update('service', label)}
+                    />
+                    <span>{label}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
 
             <label className="field">
               <span>Décrivez votre besoin *</span>

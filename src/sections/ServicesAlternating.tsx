@@ -13,7 +13,7 @@ export default function ServicesAlternating() {
               className={`services-alt-row ${i % 2 === 1 ? 'is-reverse' : ''}`}
             >
               <div className="services-alt-media services-alt-media-cover">
-                <ServiceCover index={s.index} title={s.title} image={s.image} />
+                <ServiceCover index={s.index} title={s.title} image={s.image} showTitle={false} />
               </div>
               <div className="services-alt-body">
                 <h3 className="services-alt-title">{s.title}</h3>
@@ -48,7 +48,7 @@ export default function ServicesAlternating() {
                   <Link to={`/services/${s.slug}`} className="btn btn-ghost">
                     En savoir plus
                   </Link>
-                  <Link to="/contact" className="btn btn-primary">
+                  <Link to={`/contact?service=${s.slug}`} className="btn btn-primary">
                     Demander un devis
                   </Link>
                 </div>

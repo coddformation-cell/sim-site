@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { services } from '../data/services';
 import { homeServicesIntro } from '../data/company';
-import ServiceCover from '../components/ServiceCover';
 
 export default function HomeServices() {
   return (
@@ -14,11 +13,13 @@ export default function HomeServices() {
         </header>
 
         <ul className="home-services-grid" role="list">
-          {services.map((s) => (
-            <li key={s.id} className="home-service-card">
+          {services.map((s, i) => (
+            <li key={s.id} className={`home-service-card ${i === 0 ? 'is-featured' : ''}`}>
               <Link to={`/services/${s.slug}`} className="home-service-inner">
                 <div className="home-service-media">
-                  <ServiceCover index={s.index} title={s.title} image={s.image} />
+                  <img src={s.image} alt="" loading="lazy" decoding="async" />
+                  <span className="home-service-shade" aria-hidden="true" />
+                  <span className="home-service-index mono">{s.index}</span>
                 </div>
                 <div className="home-service-body">
                   <h3 className="home-service-title">{s.title}</h3>

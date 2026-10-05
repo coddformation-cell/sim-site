@@ -1077,10 +1077,10 @@ export const rawPhotos: RawPhoto[] = [
   {
     "slug": "dg-entretien",
     "alt": "Capitaine Mory Koné, directeur général de S.I.M sarl",
-    "width": 1267,
-    "height": 972,
-    "thumbWidth": 720,
-    "thumbHeight": 552,
+    "width": 900,
+    "height": 1125,
+    "thumbWidth": 560,
+    "thumbHeight": 700,
     "tags": [],
     "group": "dg"
   },

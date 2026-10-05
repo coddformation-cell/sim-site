@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
-import FilterableGallery from '../components/FilterableGallery';
-import { fieldPhotos } from '../data/gallery';
+import MediaGallery from '../components/MediaGallery';
+import { fieldPhotos, photo } from '../data/gallery';
+import { videos } from '../data/videos';
 import { projects } from '../data/projects';
-import { services } from '../data/services';
 
 export default function Projets() {
-  const headerImage = services.find((s) => s.id === 'naval')?.image;
+  const headerImage = photo('cuve-radiale-dessus').src;
 
   return (
     <>
@@ -21,13 +21,14 @@ export default function Projets() {
         <div className="container">
           <header className="section-head">
             <span className="eyebrow">Sur le terrain</span>
-            <h2 className="section-title">Nos chantiers en images.</h2>
+            <h2 className="section-title">Nos chantiers en photos et en vidéos.</h2>
             <p className="section-lead">
-              Photos de nos équipes en intervention : cuves, tuyauterie,
-              soudure, levage, plateformes en mer et travaux sous-marins.
+              Nos équipes en intervention : cuves, tuyauterie, soudure,
+              levage, plateformes en mer et travaux sous-marins. Cliquez sur
+              un média pour l’agrandir.
             </p>
           </header>
-          <FilterableGallery photos={fieldPhotos} />
+          <MediaGallery photos={fieldPhotos} videos={videos} />
         </div>
       </section>
 
