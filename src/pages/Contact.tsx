@@ -2,6 +2,7 @@ import { useState, type FormEvent } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
 import SocialLinks from '../components/SocialLinks';
+import Dropdown from '../components/Dropdown';
 import { site } from '../data/site';
 import { services } from '../data/services';
 import { photo } from '../data/gallery';
@@ -174,26 +175,13 @@ export default function Contact() {
               </label>
             </div>
 
-            <fieldset className="field service-picker">
-              <legend>Service concerné</legend>
-              <div className="service-picker-options">
-                {[...services.map((s) => s.title), 'Autre'].map((label) => (
-                  <label
-                    key={label}
-                    className={`service-chip ${form.service === label ? 'is-selected' : ''}`}
-                  >
-                    <input
-                      type="radio"
-                      name="service"
-                      value={label}
-                      checked={form.service === label}
-                      onChange={() => update('service', label)}
-                    />
-                    <span>{label}</span>
-                  </label>
-                ))}
-              </div>
-            </fieldset>
+            <Dropdown
+              label="Service concerné"
+              value={form.service}
+              options={[...services.map((x) => x.title), 'Autre']}
+              placeholder="Choisir un service"
+              onChange={(v) => update('service', v)}
+            />
 
             <label className="field">
               <span>Décrivez votre besoin *</span>

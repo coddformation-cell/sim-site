@@ -377,5 +377,290 @@ export const rawVideos: RawVideo[] = [
     "duration": 16,
     "width": 1280,
     "height": 720
+  },
+  {
+    "slug": "atelier-soudeur-tube-equipe",
+    "alt": "Soudeur et équipe autour d’un tube en atelier",
+    "tags": [
+      "tuyauterie",
+      "soudure"
+    ],
+    "duration": 22,
+    "width": 406,
+    "height": 720
+  },
+  {
+    "slug": "atelier-equipe-meulage-tube",
+    "alt": "Équipe en atelier : meulage d’un tube",
+    "tags": [
+      "tuyauterie"
+    ],
+    "duration": 15,
+    "width": 406,
+    "height": 720
+  },
+  {
+    "slug": "meulage-soudure-sous-tube",
+    "alt": "Meulage d’une soudure sous un tube",
+    "tags": [
+      "tuyauterie",
+      "soudure"
+    ],
+    "duration": 24,
+    "width": 406,
+    "height": 720
+  },
+  {
+    "slug": "atelier-coude-tuyauterie",
+    "alt": "Travail sur un coude de tuyauterie en atelier",
+    "tags": [
+      "tuyauterie"
+    ],
+    "duration": 22,
+    "width": 406,
+    "height": 720
+  },
+  {
+    "slug": "manutention-tube-grand-diametre",
+    "alt": "Manutention d’un tube de grand diamètre",
+    "tags": [
+      "tuyauterie",
+      "logistique"
+    ],
+    "duration": 22,
+    "width": 406,
+    "height": 720
+  },
+  {
+    "slug": "grue-canalisation-bacs",
+    "alt": "Grue et canalisation près des bacs de stockage",
+    "tags": [
+      "logistique",
+      "tuyauterie"
+    ],
+    "duration": 22,
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "slug": "levage-troncons-canalisation",
+    "alt": "Levage de tronçons de canalisation",
+    "tags": [
+      "logistique",
+      "tuyauterie"
+    ],
+    "duration": 22,
+    "width": 406,
+    "height": 720
+  },
+  {
+    "slug": "meulage-tube-chantier",
+    "alt": "Meulage d’un tube sur chantier",
+    "tags": [
+      "tuyauterie",
+      "soudure"
+    ],
+    "duration": 20,
+    "width": 406,
+    "height": 720
+  },
+  {
+    "slug": "intervention-vanne",
+    "alt": "Intervention sur une vanne de canalisation",
+    "tags": [
+      "tuyauterie",
+      "onshore-offshore"
+    ],
+    "duration": 22,
+    "width": 406,
+    "height": 720
+  },
+  {
+    "slug": "grue-sim-canalisations",
+    "alt": "Grue de l’entreprise près de canalisations",
+    "tags": [
+      "logistique"
+    ],
+    "duration": 24,
+    "width": 406,
+    "height": 720
+  },
+  {
+    "slug": "levage-structure-grue",
+    "alt": "Levage d’une structure métallique à la grue",
+    "tags": [
+      "logistique",
+      "chaudronnerie"
+    ],
+    "duration": 24,
+    "width": 406,
+    "height": 720
+  },
+  {
+    "slug": "grue-bacs-stockage",
+    "alt": "Grue en intervention devant des bacs de stockage",
+    "tags": [
+      "logistique"
+    ],
+    "duration": 19,
+    "width": 406,
+    "height": 720
+  },
+  {
+    "slug": "cuve-fond-plaques",
+    "alt": "Plaques d’acier posées sur le fond d’une cuve",
+    "tags": [
+      "chaudronnerie"
+    ],
+    "duration": 22,
+    "width": 406,
+    "height": 720
+  },
+  {
+    "slug": "cuve-paroi-echelle",
+    "alt": "Intervention le long de la paroi d’un grand bac",
+    "tags": [
+      "chaudronnerie"
+    ],
+    "duration": 22,
+    "width": 406,
+    "height": 720
+  },
+  {
+    "slug": "levage-fleche-bac",
+    "alt": "Levage d’un élément à la grue au-dessus d’un bac",
+    "tags": [
+      "logistique",
+      "chaudronnerie"
+    ],
+    "duration": 22,
+    "width": 406,
+    "height": 720
+  },
+  {
+    "slug": "raccords-brides-atelier",
+    "alt": "Raccords et brides de tuyauterie disposés au sol",
+    "tags": [
+      "tuyauterie"
+    ],
+    "duration": 20,
+    "width": 406,
+    "height": 720
+  },
+  {
+    "slug": "travail-interieur-tube",
+    "alt": "Intervenant au travail à l’intérieur d’un tube",
+    "tags": [
+      "tuyauterie",
+      "soudure"
+    ],
+    "duration": 15,
+    "width": 406,
+    "height": 720
+  },
+  {
+    "slug": "plateforme-groupe-electrogene",
+    "alt": "Groupe électrogène sur le pont d’une plateforme",
+    "tags": [
+      "onshore-offshore"
+    ],
+    "duration": 26,
+    "width": 406,
+    "height": 720
+  },
+  {
+    "slug": "montage-tuyauterie-orange",
+    "alt": "Montage d’une tuyauterie par une équipe en tenue orange",
+    "tags": [
+      "tuyauterie"
+    ],
+    "duration": 22,
+    "width": 406,
+    "height": 720
+  },
+  {
+    "slug": "cuve-structure-ronde-soudure",
+    "alt": "Soudage sur une structure circulaire dans une cuve",
+    "tags": [
+      "chaudronnerie",
+      "soudure"
+    ],
+    "duration": 22,
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "slug": "cuve-assemblage-poutres",
+    "alt": "Assemblage de poutres sur le fond d’une cuve",
+    "tags": [
+      "chaudronnerie",
+      "soudure"
+    ],
+    "duration": 22,
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "slug": "cuve-radiale-vue-haute",
+    "alt": "Armature radiale d’une cuve, vue de haut",
+    "tags": [
+      "chaudronnerie"
+    ],
+    "duration": 22,
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "slug": "cordons-soudure-tole",
+    "alt": "Cordons de soudure sur une tôle",
+    "tags": [
+      "soudure",
+      "chaudronnerie"
+    ],
+    "duration": 9,
+    "width": 406,
+    "height": 720
+  },
+  {
+    "slug": "cuve-chantier-equipe",
+    "alt": "Équipe au travail sur le fond d’une cuve",
+    "tags": [
+      "chaudronnerie"
+    ],
+    "duration": 22,
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "slug": "cuve-chantier-materiel",
+    "alt": "Matériel et équipe sur le fond d’une cuve",
+    "tags": [
+      "chaudronnerie"
+    ],
+    "duration": 22,
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "slug": "atelier-recipient-echafaudage",
+    "alt": "Équipement cylindrique et échafaudage en atelier",
+    "tags": [
+      "chaudronnerie",
+      "echangeur-aero"
+    ],
+    "duration": 22,
+    "width": 406,
+    "height": 720
+  },
+  {
+    "slug": "atelier-grand-recipient-blanc",
+    "alt": "Grand équipement cylindrique blanc en atelier",
+    "tags": [
+      "chaudronnerie",
+      "echangeur-aero"
+    ],
+    "duration": 22,
+    "width": 1280,
+    "height": 720
   }
 ];

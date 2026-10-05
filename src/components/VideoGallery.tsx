@@ -68,7 +68,7 @@ export default function VideoGallery({ videos, className = '' }: Props) {
         <Lightbox
           label="Lecteur vidéo"
           caption={current.alt}
-          counter={videos.length > 1 ? `${(active ?? 0) + 1} / ${videos.length}` : undefined}
+          counter={`${videos.length > 1 ? `${(active ?? 0) + 1} / ${videos.length} · ` : ''}sans son`}
           onClose={close}
           onPrev={videos.length > 1 ? prev : undefined}
           onNext={videos.length > 1 ? next : undefined}
