@@ -113,7 +113,6 @@ export default function Header() {
               style={{ transitionDelay: `${100 + i * 40}ms` }}
               onClick={close}
             >
-              <span className="mobile-link-index">0{i + 1}</span>
               {l.label}
             </NavLink>
           ))}

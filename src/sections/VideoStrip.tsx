@@ -11,7 +11,7 @@ export default function VideoStrip() {
           <h2 className="section-title">Nos interventions en mouvement.</h2>
           <p className="section-lead">
             Soudure en atelier, levages, structures de cuves et plateformes en
-            mer : de courts extraits filmés sur nos chantiers (sans son).
+            mer : de courts extraits filmés sur nos chantiers.
           </p>
         </header>
 

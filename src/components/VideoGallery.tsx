@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useRef, useState, type SyntheticEvent } from 'react';
 import Lightbox from './Lightbox';
 import type { Video } from '../data/videos';
 
@@ -29,6 +29,17 @@ export default function VideoGallery({ videos, className = '' }: Props) {
   const next = useCallback(() => step(1), [step]);
 
   const current = active === null ? null : videos[active];
+
+  // Lecture avec le son ; si le navigateur la refuse, on retombe sur une
+  // lecture muette (l'utilisateur réactive le son avec les commandes).
+  const startWithSound = (e: SyntheticEvent<HTMLVideoElement>) => {
+    const el = e.currentTarget;
+    if (!el.paused) return;
+    el.play().catch(() => {
+      el.muted = true;
+      el.play().catch(() => {});
+    });
+  };
 
   return (
     <>
@@ -68,7 +79,7 @@ export default function VideoGallery({ videos, className = '' }: Props) {
         <Lightbox
           label="Lecteur vidéo"
           caption={current.alt}
-          counter={`${videos.length > 1 ? `${(active ?? 0) + 1} / ${videos.length} · ` : ''}sans son`}
+          counter={videos.length > 1 ? `${(active ?? 0) + 1} / ${videos.length}` : undefined}
           onClose={close}
           onPrev={videos.length > 1 ? prev : undefined}
           onNext={videos.length > 1 ? next : undefined}
@@ -80,9 +91,8 @@ export default function VideoGallery({ videos, className = '' }: Props) {
             poster={current.poster}
             controls
             autoPlay
-            muted
-            loop
             playsInline
+            onLoadedData={startWithSound}
           />
         </Lightbox>
       )}
