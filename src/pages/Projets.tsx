@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
+import PhotoGallery from '../components/PhotoGallery';
+import { fieldPhotos } from '../data/gallery';
 import { projects } from '../data/projects';
 import { services } from '../data/services';
 
@@ -14,6 +16,20 @@ export default function Projets() {
         lead="Chaque réalisation présentera prochainement le contexte, les défis techniques rencontrés, la solution mise en œuvre et, quand disponibles, les visuels avant/après du chantier."
         image={headerImage}
       />
+
+      <section className="section field-gallery-section">
+        <div className="container">
+          <header className="section-head">
+            <span className="eyebrow">Sur le terrain</span>
+            <h2 className="section-title">Nos chantiers en images.</h2>
+            <p className="section-lead">
+              Photos de nos équipes en intervention : cuves, tuyauterie,
+              soudure, levage, plateformes en mer et travaux sous-marins.
+            </p>
+          </header>
+          <PhotoGallery photos={fieldPhotos} />
+        </div>
+      </section>
 
       {projects.length === 0 ? (
         <section className="section empty-state-section">
