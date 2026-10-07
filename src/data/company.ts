@@ -45,3 +45,14 @@ export const homeAboutIntro = {
     'Nos équipes qualifiées interviennent aussi bien en atelier que sur site, en Côte d’Ivoire et sur les chantiers offshore de la sous-région.',
   ],
 };
+
+// Mot du directeur général — texte rédigé à partir des seuls faits déjà
+// publiés sur le site (atelier de Koumassi, chantiers en mer, qualité /
+// sécurité / délais). Publié à la demande du client ; à faire confirmer
+// (ou à remplacer par ses propres mots) par le Capitaine Mory Koné.
+export const directorMessage = {
+  text:
+    'À S.I.M sarl, nous mettons notre savoir-faire de soudeurs, de tuyauteurs et de chaudronniers au service de l’industrie et du maritime ivoiriens. Qualité, sécurité et respect des délais guident chacune de nos interventions, de l’atelier de Koumassi jusqu’aux chantiers en mer.',
+  author: 'Capitaine Mory Koné',
+  role: 'Directeur Général de S.I.M sarl',
+};

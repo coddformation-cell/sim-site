@@ -1,4 +1,5 @@
 import { directorPhotos } from '../data/gallery';
+import { directorMessage } from '../data/company';
 
 export default function DirectorSection() {
   const { portrait, poster, trophees } = directorPhotos;
@@ -29,6 +30,13 @@ export default function DirectorSection() {
             Meilleur Manager d’Entreprise de Soudure Maritime (Africa Dubai
             Business Award, Dubaï), ainsi que le Super Prix Argent IDBF.
           </p>
+          <blockquote className="director-quote">
+            <p>« {directorMessage.text} »</p>
+            <footer>
+              <strong>{directorMessage.author}</strong>
+              <span className="mono">{directorMessage.role}</span>
+            </footer>
+          </blockquote>
           <div className="director-awards">
             <figure data-reveal>
               <img

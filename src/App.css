@@ -3792,3 +3792,31 @@
   .partners-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
   .partner-card { height: 112px; padding: 0.8rem 0.9rem; }
 }
+
+/* Mot du directeur général */
+.director-quote {
+  margin: 0.25rem 0 0.5rem;
+  padding: 0.25rem 0 0.25rem 1.4rem;
+  border-left: 3px solid var(--color-accent);
+  max-width: 60ch;
+}
+.director-quote p {
+  margin: 0 0 0.9rem;
+  color: var(--color-fg-strong);
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+  font-style: italic;
+}
+.director-quote footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.95rem;
+}
+.director-quote footer strong { color: var(--color-fg-strong); font-weight: 600; }
+.director-quote footer .mono {
+  color: var(--color-accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
