@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="footer-brand">
           <Logo />
           <p>
-            Soudure Industrielle & Maritime — Tuyauterie, Chaudronnerie, Usinage,
+            SIM SARL (S.I.M sarl), Soudure Industrielle & Maritime — Tuyauterie, Chaudronnerie, Usinage,
             Onshore/Offshore, Naval, Échangeur & Aéro et Logistique en Côte d’Ivoire.
           </p>
           <ul className="footer-locations" role="list">

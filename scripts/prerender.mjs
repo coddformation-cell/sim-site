@@ -29,7 +29,7 @@ const websiteJsonLd = {
   '@id': seo.origin + '/#website',
   url: seo.origin + '/',
   name: seo.siteName,
-  alternateName: ['SIM sarl', 'SIM SARL', 'Soudure Industrielle et Maritime', 'simsarl.com'],
+  alternateName: ['SIM sarl', 'SIM SARL', 'SIM SARL Côte d’Ivoire', 'Soudure Industrielle et Maritime', 'simsarl.com'],
   inLanguage: 'fr',
   publisher: { '@id': seo.origin + '/#organisation' },
 };
@@ -42,6 +42,9 @@ const render = (route, meta) => {
   html = swap(html, /<title>[\s\S]*?<\/title>/, `<title>${title}</title>`, 'title');
   html = swap(html, /<meta name="description" content="[^"]*"\s*\/?>/, `<meta name="description" content="${description}" />`, 'description');
   html = swap(html, /<link rel="canonical" href="[^"]*"\s*\/?>/, `<link rel="canonical" href="${url}" />`, 'canonical');
+  html = html.replace(`<link rel="canonical" href="${url}" />`, `<link rel="canonical" href="${url}" />
+    <link rel="alternate" hreflang="fr-CI" href="${url}" />
+    <link rel="alternate" hreflang="x-default" href="${url}" />`);
   html = swap(html, /<meta property="og:title" content="[^"]*"\s*\/?>/, `<meta property="og:title" content="${title}" />`, 'og:title');
   html = swap(html, /<meta property="og:description" content="[^"]*"\s*\/?>/, `<meta property="og:description" content="${description}" />`, 'og:description');
   html = swap(html, /<meta property="og:url" content="[^"]*"\s*\/?>/, `<meta property="og:url" content="${url}" />`, 'og:url');
