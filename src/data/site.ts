@@ -12,7 +12,7 @@ export const site = {
     fax: '+225 25 21 00 32 79',
     email: 'simsoudure@gmail.com',
     emailSecretariat: 'secretariat@sim.ci',
-    web: 'www.sim.ci',
+    web: 'www.simsarl.com',
     address: 'Koumassi Barradji, quartier 3 ampoules · 01 B.P 587 · Abidjan 01',
     city: 'Koumassi — Abidjan',
     country: 'Côte d’Ivoire',

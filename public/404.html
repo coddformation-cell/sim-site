@@ -7,9 +7,9 @@
       // GitHub Pages n'a pas de routage côté serveur : on encode l'URL
       // demandée dans une query string, on redirige vers index.html, et
       // index.html la décode pour laisser React Router prendre le relais.
-      // pathSegmentsToKeep=1 car le site est servi sous /sim-site/ tant que
-      // le domaine personnalisé n'est pas actif (voir vite.config.ts).
-      var pathSegmentsToKeep = 1;
+      // pathSegmentsToKeep=0 : site servi à la racine de www.simsarl.com
+      // (mettre 1 si le site repasse sous /sim-site/, voir vite.config.ts).
+      var pathSegmentsToKeep = 0;
       var l = window.location;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
