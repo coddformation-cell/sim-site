@@ -9,6 +9,7 @@ import ServiceDetail from './pages/ServiceDetail';
 import Projets from './pages/Projets';
 import RejoignezNous from './pages/RejoignezNous';
 import Contact from './pages/Contact';
+import useRouteMeta from './lib/useRouteMeta';
 import './App.css';
 
 const REVEAL_SELECTOR =
@@ -48,6 +49,7 @@ function useReveal(pathname: string) {
 function AppShell() {
   const { pathname } = useLocation();
   useReveal(pathname);
+  useRouteMeta();
 
   return (
     <>

@@ -1,0 +1,59 @@
+{
+  "origin": "https://www.simsarl.com",
+  "siteName": "S.I.M sarl",
+  "ogImage": "/images/hero/hero-1-md.jpg",
+  "pages": {
+    "/": {
+      "title": "S.I.M sarl — Soudure Industrielle & Maritime · Abidjan",
+      "description": "S.I.M sarl, à Koumassi (Abidjan) : tuyauterie, chaudronnerie, usinage, onshore/offshore, construction et réparation navale, échangeur & aéro, logistique. Demandez un devis."
+    },
+    "/a-propos": {
+      "title": "À propos — S.I.M sarl, soudure industrielle et maritime",
+      "description": "Découvrez S.I.M sarl, entreprise de soudure industrielle et maritime basée à Koumassi, Abidjan : son activité, ses valeurs et sa direction."
+    },
+    "/services": {
+      "title": "Nos services — Tuyauterie, chaudronnerie, naval | S.I.M sarl",
+      "description": "Sept expertises : tuyauterie, chaudronnerie, usinage, onshore/offshore, construction et réparation navale, échangeur & aéro et logistique, avec leurs compétences et leurs moyens."
+    },
+    "/services/tuyauterie": {
+      "title": "Tuyauterie industrielle à Abidjan | S.I.M sarl",
+      "description": "Fabrication, installation et maintenance des systèmes de tuyauterie industriels : préfabrication en atelier, soudage arc et TIG, interventions sur site."
+    },
+    "/services/chaudronnerie": {
+      "title": "Chaudronnerie à Abidjan : cuves, tanks, charpentes | S.I.M sarl",
+      "description": "Conception, fabrication et réparation d'ouvrages métalliques complexes : appareils sous pression, silos, tanks de stockage, cuves, charpentes et réservoirs."
+    },
+    "/services/usinage": {
+      "title": "Usinage de précision à Abidjan | S.I.M sarl",
+      "description": "Fabrication et ajustement de pièces mécaniques de précision sur plans ou sur échantillon, taillage d'engrenages, parc machines complet."
+    },
+    "/services/onshore-offshore": {
+      "title": "Interventions onshore et offshore | S.I.M sarl",
+      "description": "Interventions sur terre et en mer pour l'industrie pétrolière et gazière : tuyauterie, chaudronnerie, travaux mécaniques, montage, démontage et épreuves."
+    },
+    "/services/naval": {
+      "title": "Construction et réparation navale à Abidjan | S.I.M sarl",
+      "description": "Mécanique, maintenance navale, entretien de coque et moteur, sablage et peinture : réparation et maintenance des bateaux avec l'expertise soudure de S.I.M sarl."
+    },
+    "/services/echangeur-aero": {
+      "title": "Échangeurs de chaleur et aéro : réparation et maintenance | S.I.M sarl",
+      "description": "Réparation et maintenance des échangeurs de chaleur industriels, par une équipe de tuyauteurs, soudeurs et chaudronniers qualifiés."
+    },
+    "/services/logistique": {
+      "title": "Logistique : location d'équipements de levage et de chantier | S.I.M sarl",
+      "description": "Location d'équipements de levage, de soudage, de découpe et de matériels de chantier : grues, camions à bras auxiliaire, groupes électrogènes."
+    },
+    "/realisations": {
+      "title": "Réalisations — chantiers en photos et en vidéos | S.I.M sarl",
+      "description": "Photos et vidéos des chantiers de S.I.M sarl : cuves, tuyauterie, soudure, levage, plateformes en mer et travaux sous-marins."
+    },
+    "/rejoignez-nous": {
+      "title": "Rejoignez-nous — carrières et partenariats | S.I.M sarl",
+      "description": "Candidatures spontanées et partenariats : S.I.M sarl accueille les professionnels qualifiés du secteur industriel et maritime."
+    },
+    "/contact": {
+      "title": "Contact et demande de devis | S.I.M sarl, Abidjan",
+      "description": "Contactez S.I.M sarl à Koumassi, Abidjan : demande de devis, téléphone et coordonnées. Notre équipe revient vers vous rapidement."
+    }
+  }
+}
