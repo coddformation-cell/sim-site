@@ -3674,8 +3674,9 @@
 .dropdown-option.is-selected { color: var(--color-accent); font-weight: 600; }
 
 /* ============ Direction (rééquilibrage) ============ */
-.director-portrait img { aspect-ratio: 4 / 5; object-fit: cover; }
+.director-portrait img { aspect-ratio: 702 / 1080; object-fit: cover; }
 .director-awards img { aspect-ratio: 4 / 5; }
+.director-awards .director-trophees-img { object-position: 30% center; }
 
 /* ============ CTA final avec photo ============ */
 .cta-final { position: relative; overflow: hidden; background: var(--color-bg-elev-2); }
@@ -3706,9 +3707,7 @@
 
 /* ============ Direction : portrait pleine hauteur sur grand écran ============ */
 @media (min-width: 900px) {
-  .director-grid { align-items: stretch; }
-  .director-portrait { display: flex; }
-  .director-portrait img { height: 100%; aspect-ratio: auto; min-height: 480px; }
+  .director-grid { align-items: start; }
 }
 
 /* ============ Rejoignez-nous : photos d'équipes ============ */
@@ -3718,3 +3717,35 @@
 @media (min-width: 720px) { .join-team-grid { grid-template-columns: repeat(3, 1fr); } }
 .join-team-grid li { overflow: hidden; border: 1px solid var(--color-line); aspect-ratio: 4 / 3; background: var(--color-bg-elev); }
 .join-team-grid img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ============ Bannière officielle (accueil) ============ */
+.hero-banner {
+  background: #0b1e4f;
+  padding-top: 76px; /* hauteur de l'en-tête fixe */
+  line-height: 0;
+}
+.hero-banner img {
+  display: block;
+  width: 100%;
+  max-width: 1440px;
+  height: auto;
+  margin: 0 auto;
+}
+/* le hero qui suit n'a plus à dégager l'en-tête */
+.hero-banner + .hero {
+  min-height: 0;
+  padding: 0;
+}
+.hero-banner + .hero .hero-content {
+  padding-top: clamp(3rem, 6vw, 5rem);
+}
+@media (max-width: 960px) {
+  .hero-banner { padding-top: 68px; }
+}
+
+/* Extraits de chantier : lecture muette (voir VideoGallery) — pas de
+   bouton son tant que la musique d'ambiance n'est pas intégrée. */
+.lightbox-video:not(.lightbox-video-wide)::-webkit-media-controls-mute-button,
+.lightbox-video:not(.lightbox-video-wide)::-webkit-media-controls-volume-slider {
+  display: none;
+}

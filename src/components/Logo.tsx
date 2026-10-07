@@ -5,7 +5,7 @@ type Props = {
   compact?: boolean;
 };
 
-// Logo officiel S.I.M sarl — image réelle du catalogue.
+// Logo officiel S.I.M sarl — nouveau sceau fourni par le client (oct. 2026).
 export default function Logo({ compact = false }: Props) {
   return (
     <Link to="/" className="logo" aria-label="S.I.M sarl — Accueil">
@@ -13,8 +13,8 @@ export default function Logo({ compact = false }: Props) {
         src={withBase('/logo-sim.jpg')}
         alt="S.I.M sarl — Soudure Industrielle et Maritime"
         className="logo-mark"
-        width="42"
-        height="42"
+        width="56"
+        height="56"
       />
       {!compact && (
         <span className="logo-word">

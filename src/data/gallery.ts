@@ -100,9 +100,8 @@ export const homeFieldPhotos: FieldPhoto[] = [
 ].map(photo);
 
 export const directorPhotos = {
-  portrait: photo('dg-entretien'),
+  portrait: photo('dg-portrait-trophees'),
   trophees: photo('dg-trophees'),
-  withTrophies: photo('dg-portrait-trophees'),
   poster: photo('dg-affiche-prix'),
 };
 

@@ -168,16 +168,6 @@ export const rawVideos: RawVideo[] = [
     "height": 720
   },
   {
-    "slug": "atelier-fabrication-tuyauterie",
-    "alt": "Fabrication d’une ligne de tuyauterie en atelier",
-    "tags": [
-      "tuyauterie"
-    ],
-    "duration": 22,
-    "width": 406,
-    "height": 720
-  },
-  {
     "slug": "atelier-soudeurs-rouge",
     "alt": "Soudeurs en combinaison rouge autour de tubes",
     "tags": [
@@ -346,17 +336,6 @@ export const rawVideos: RawVideo[] = [
     "height": 720
   },
   {
-    "slug": "atelier-recipient-equipe",
-    "alt": "Équipe autour d’un équipement cylindrique en atelier",
-    "tags": [
-      "chaudronnerie",
-      "echangeur-aero"
-    ],
-    "duration": 22,
-    "width": 406,
-    "height": 720
-  },
-  {
     "slug": "soudure-dans-recipient",
     "alt": "Soudure dans l’ouverture d’un équipement cylindrique",
     "tags": [
@@ -390,16 +369,6 @@ export const rawVideos: RawVideo[] = [
     "height": 720
   },
   {
-    "slug": "atelier-equipe-meulage-tube",
-    "alt": "Équipe en atelier : meulage d’un tube",
-    "tags": [
-      "tuyauterie"
-    ],
-    "duration": 15,
-    "width": 406,
-    "height": 720
-  },
-  {
     "slug": "meulage-soudure-sous-tube",
     "alt": "Meulage d’une soudure sous un tube",
     "tags": [
@@ -415,17 +384,6 @@ export const rawVideos: RawVideo[] = [
     "alt": "Travail sur un coude de tuyauterie en atelier",
     "tags": [
       "tuyauterie"
-    ],
-    "duration": 22,
-    "width": 406,
-    "height": 720
-  },
-  {
-    "slug": "manutention-tube-grand-diametre",
-    "alt": "Manutention d’un tube de grand diamètre",
-    "tags": [
-      "tuyauterie",
-      "logistique"
     ],
     "duration": 22,
     "width": 406,
@@ -579,17 +537,6 @@ export const rawVideos: RawVideo[] = [
     "height": 720
   },
   {
-    "slug": "cuve-structure-ronde-soudure",
-    "alt": "Soudage sur une structure circulaire dans une cuve",
-    "tags": [
-      "chaudronnerie",
-      "soudure"
-    ],
-    "duration": 22,
-    "width": 1280,
-    "height": 720
-  },
-  {
     "slug": "cuve-assemblage-poutres",
     "alt": "Assemblage de poutres sur le fond d’une cuve",
     "tags": [
@@ -636,28 +583,6 @@ export const rawVideos: RawVideo[] = [
     "alt": "Matériel et équipe sur le fond d’une cuve",
     "tags": [
       "chaudronnerie"
-    ],
-    "duration": 22,
-    "width": 1280,
-    "height": 720
-  },
-  {
-    "slug": "atelier-recipient-echafaudage",
-    "alt": "Équipement cylindrique et échafaudage en atelier",
-    "tags": [
-      "chaudronnerie",
-      "echangeur-aero"
-    ],
-    "duration": 22,
-    "width": 406,
-    "height": 720
-  },
-  {
-    "slug": "atelier-grand-recipient-blanc",
-    "alt": "Grand équipement cylindrique blanc en atelier",
-    "tags": [
-      "chaudronnerie",
-      "echangeur-aero"
     ],
     "duration": 22,
     "width": 1280,

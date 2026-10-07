@@ -1,3 +1,4 @@
+import HeroBanner from '../sections/HeroBanner';
 import Hero from '../sections/Hero';
 import Manifesto from '../sections/Manifesto';
 import HomeServices from '../sections/HomeServices';
@@ -10,6 +11,7 @@ import CTAFinal from '../sections/CTAFinal';
 export default function Home() {
   return (
     <>
+      <HeroBanner />
       <Hero />
       <Manifesto />
       <HomeServices />

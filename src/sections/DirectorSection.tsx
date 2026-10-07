@@ -1,17 +1,17 @@
 import { directorPhotos } from '../data/gallery';
 
 export default function DirectorSection() {
-  const { portrait, trophees, withTrophies, poster } = directorPhotos;
+  const { portrait, poster, trophees } = directorPhotos;
 
   return (
     <section className="section director-section">
       <div className="container director-grid">
         <figure className="director-portrait" data-reveal>
           <img
-            src={portrait.thumb}
+            src={portrait.src}
             alt={portrait.alt}
-            width={portrait.thumbWidth}
-            height={portrait.thumbHeight}
+            width={portrait.width}
+            height={portrait.height}
             loading="lazy"
             decoding="async"
           />
@@ -32,16 +32,6 @@ export default function DirectorSection() {
           <div className="director-awards">
             <figure data-reveal>
               <img
-                src={withTrophies.thumb}
-                alt={withTrophies.alt}
-                width={withTrophies.thumbWidth}
-                height={withTrophies.thumbHeight}
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <figure data-reveal>
-              <img
                 src={poster.thumb}
                 alt={poster.alt}
                 width={poster.thumbWidth}
@@ -50,7 +40,7 @@ export default function DirectorSection() {
                 decoding="async"
               />
             </figure>
-            <figure className="director-awards-wide" data-reveal>
+            <figure data-reveal>
               <img
                 src={trophees.thumb}
                 alt={trophees.alt}
@@ -58,6 +48,7 @@ export default function DirectorSection() {
                 height={trophees.thumbHeight}
                 loading="lazy"
                 decoding="async"
+                className="director-trophees-img"
               />
             </figure>
           </div>

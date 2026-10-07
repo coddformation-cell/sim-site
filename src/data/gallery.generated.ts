@@ -1075,16 +1075,6 @@ export const rawPhotos: RawPhoto[] = [
     "group": "team"
   },
   {
-    "slug": "dg-entretien",
-    "alt": "Capitaine Mory Koné, directeur général de S.I.M sarl",
-    "width": 900,
-    "height": 1125,
-    "thumbWidth": 560,
-    "thumbHeight": 700,
-    "tags": [],
-    "group": "dg"
-  },
-  {
     "slug": "dg-trophees",
     "alt": "Trophées reçus par le directeur général en mars 2024",
     "width": 1600,

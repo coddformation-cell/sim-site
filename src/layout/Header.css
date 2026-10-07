@@ -9,7 +9,7 @@
 }
 
 .header.is-scrolled {
-  background: rgba(11, 30, 79, 0.82);
+  background: rgba(11, 30, 79, 0.97);
   backdrop-filter: saturate(140%) blur(14px);
   -webkit-backdrop-filter: saturate(140%) blur(14px);
   border-bottom-color: var(--color-line);
@@ -34,13 +34,13 @@
   color: var(--color-fg);
 }
 .logo-mark {
-  width: 42px;
-  height: 42px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
   flex-shrink: 0;
-  border: 1px solid rgba(201, 169, 97, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.35);
 }
 .logo-word-accent {
   color: var(--color-accent);
