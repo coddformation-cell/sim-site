@@ -74,7 +74,7 @@ export const services: SIMService[] = [
   },
   {
     id: 'usinage',
-    image: withBase('/images/services/usinage.jpg'),
+    image: withBase('/images/chantiers/cuve-meulage-toles.jpg'),
     slug: 'usinage',
     index: '03',
     title: 'Usinage',

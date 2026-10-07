@@ -3,9 +3,9 @@
 // - catalogue/8.jpeg = photos ingénieur + soudeur (SANS texte catalogue)
 // - catalogue/9.jpeg = photos équipe complète + soudeur (SANS texte catalogue)
 // - images/chantiers/* = vraies photos de chantiers S.I.M (voir data/gallery.ts)
-// - images/hero-welding-sparks.jpg = photo d'ambiance libre de droits (Unsplash)
-//   pour le hero, et images/services/usinage.jpg idem : aucune photo
-//   d'usinage réelle n'existe dans les archives du client.
+// - Plus aucune photo d'illustration (stock) : le client veut uniquement des
+//   photos réelles de l'entreprise (ou son logo). La couverture Usinage utilise
+//   une photo de chantier S.I.M faute de photo d'usinage dédiée.
 //
 // Les pages du catalogue (1-7, 10) contiennent du texte imprimé
 // ("AVANT", "APRÈS", "DOMAINES DE COMPÉTENCES"...) et NE doivent PAS être
@@ -23,9 +23,6 @@ export const media = {
   team: withBase('/catalogue/9.jpeg'),
   engineer: withBase('/catalogue/8.jpeg'),
   weldingWorkshop: withBase('/images/chantiers/offshore-grue-mer.jpg'),
-  // Photo hero : étincelles de soudure, grande zone sombre à gauche
-  // idéale pour la lisibilité du texte (2400x1350, 16:9).
-  heroWelding: withBase('/images/hero-welding-sparks.jpg'),
   // Bandeaux : vraies photos de chantier (page À propos / bandeau d'accueil).
   teamIndustrial: withBase('/images/chantiers/cuve-grande-equipe.jpg'),
 };

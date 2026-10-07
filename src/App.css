@@ -3757,3 +3757,38 @@
   text-underline-offset: 2px;
 }
 .footer-credits a:hover { color: var(--color-accent); }
+
+/* ============ Partenaires ============ */
+.partners-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.partner-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  padding: 1.1rem 1.3rem;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.partner-card img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+@media (max-width: 960px) {
+  .partners-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 560px) {
+  .partners-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .partner-card { height: 112px; padding: 0.8rem 0.9rem; }
+}

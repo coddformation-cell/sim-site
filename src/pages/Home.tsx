@@ -6,6 +6,7 @@ import FilmSection from '../sections/FilmSection';
 import FieldStrip from '../sections/FieldStrip';
 import VideoStrip from '../sections/VideoStrip';
 import DirectorSection from '../sections/DirectorSection';
+import PartnersSection from '../sections/PartnersSection';
 import CTAFinal from '../sections/CTAFinal';
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <FieldStrip />
       <VideoStrip />
       <DirectorSection />
+      <PartnersSection />
       <CTAFinal />
     </>
   );

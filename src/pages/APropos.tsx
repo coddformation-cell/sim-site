@@ -4,6 +4,7 @@ import { values, homeAboutIntro } from '../data/company';
 import { site } from '../data/site';
 import { media } from '../data/media';
 import DirectorSection from '../sections/DirectorSection';
+import PartnersSection from '../sections/PartnersSection';
 
 export default function APropos() {
   return (
@@ -79,6 +80,8 @@ export default function APropos() {
           </ul>
         </div>
       </section>
+
+      <PartnersSection />
 
       <section className="section team-section">
         <div className="container empty-state">
