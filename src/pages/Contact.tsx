@@ -57,7 +57,6 @@ export default function Contact() {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           _subject: `Nouvelle demande de devis — ${serviceLabel}`,
-          _cc: site.contact.emailSecretariat,
           _template: 'table',
           Nom: form.name,
           Société: form.company || '—',
@@ -118,9 +117,6 @@ export default function Contact() {
               <li>
                 <span className="mono contact-info-label">Email</span>
                 <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
-                <a href={`mailto:${site.contact.emailSecretariat}`}>
-                  {site.contact.emailSecretariat}
-                </a>
               </li>
               <li>
                 <span className="mono contact-info-label">Site web</span>
