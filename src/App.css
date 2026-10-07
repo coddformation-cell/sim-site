@@ -3743,9 +3743,17 @@
   .hero-banner { padding-top: 68px; }
 }
 
-/* Extraits de chantier : lecture muette (voir VideoGallery) — pas de
-   bouton son tant que la musique d'ambiance n'est pas intégrée. */
-.lightbox-video:not(.lightbox-video-wide)::-webkit-media-controls-mute-button,
-.lightbox-video:not(.lightbox-video-wide)::-webkit-media-controls-volume-slider {
-  display: none;
+
+/* Mention de licence des musiques (CC BY 3.0) */
+.footer-credits {
+  padding-top: 0.9rem;
+  color: var(--color-muted);
+  font-size: 0.72rem;
+  line-height: 1.5;
 }
+.footer-credits a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.footer-credits a:hover { color: var(--color-accent); }

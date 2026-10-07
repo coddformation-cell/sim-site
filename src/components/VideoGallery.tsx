@@ -30,11 +30,15 @@ export default function VideoGallery({ videos, className = '' }: Props) {
 
   const current = active === null ? null : videos[active];
 
-  // Les extraits de chantier se lisent sans le son d'origine (voix de
-  // l'équipe) : lecture muette, en attendant la musique d'ambiance du client.
-  const startPlayback = (e: SyntheticEvent<HTMLVideoElement>) => {
+  // Lecture avec la musique d'ambiance ; si le navigateur refuse le son,
+  // on retombe sur une lecture muette (le son se réactive avec les commandes).
+  const startWithSound = (e: SyntheticEvent<HTMLVideoElement>) => {
     const el = e.currentTarget;
-    if (el.paused) el.play().catch(() => {});
+    if (!el.paused) return;
+    el.play().catch(() => {
+      el.muted = true;
+      el.play().catch(() => {});
+    });
   };
 
   return (
@@ -87,9 +91,8 @@ export default function VideoGallery({ videos, className = '' }: Props) {
             poster={current.poster}
             controls
             autoPlay
-            muted
             playsInline
-            onLoadedData={startPlayback}
+            onLoadedData={startWithSound}
           />
         </Lightbox>
       )}

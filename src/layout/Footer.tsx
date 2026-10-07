@@ -68,6 +68,22 @@ export default function Footer() {
         <span>© {year} S.I.M sarl — Soudure Industrielle & Maritime.</span>
         <span className="footer-demo">Tous droits réservés.</span>
       </div>
+
+      <div className="container footer-credits">
+        Musiques des extraits vidéo : « Big Rock », « Aitech » et « Accralate » de{' '}
+        <a href="https://incompetech.com" target="_blank" rel="noopener noreferrer">
+          Kevin MacLeod (incompetech.com)
+        </a>
+        , licence{' '}
+        <a
+          href="https://creativecommons.org/licenses/by/3.0/deed.fr"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Creative Commons Attribution 3.0
+        </a>
+        .
+      </div>
     </footer>
   );
 }
