@@ -1,18 +1,18 @@
 {
   "origin": "https://www.simsarl.com",
   "siteName": "S.I.M sarl",
-  "ogImage": "/images/hero/hero-1-md.jpg",
+  "ogImage": "/images/banniere-sim.jpg",
   "pages": {
     "/": {
-      "title": "S.I.M sarl — Soudure Industrielle & Maritime · Abidjan",
-      "description": "S.I.M sarl, à Koumassi (Abidjan) : tuyauterie, chaudronnerie, usinage, onshore/offshore, construction et réparation navale, échangeur & aéro, logistique. Demandez un devis."
+      "title": "S.I.M sarl (SIM sarl) — Soudure industrielle et maritime · Abidjan",
+      "description": "SIM sarl (S.I.M sarl), entreprise de soudure industrielle et maritime à Koumassi, Abidjan : tuyauterie, chaudronnerie, usinage, onshore/offshore, réparation navale, échangeur & aéro, logistique. Demandez un devis."
     },
     "/a-propos": {
-      "title": "À propos — S.I.M sarl, soudure industrielle et maritime",
+      "title": "À propos — S.I.M sarl (SIM sarl), soudure industrielle et maritime",
       "description": "Découvrez S.I.M sarl, entreprise de soudure industrielle et maritime basée à Koumassi, Abidjan : son activité, ses valeurs et sa direction."
     },
     "/services": {
-      "title": "Nos services — Tuyauterie, chaudronnerie, naval | S.I.M sarl",
+      "title": "Nos services — Tuyauterie, chaudronnerie, usinage, naval à Abidjan | S.I.M sarl",
       "description": "Sept expertises : tuyauterie, chaudronnerie, usinage, onshore/offshore, construction et réparation navale, échangeur & aéro et logistique, avec leurs compétences et leurs moyens."
     },
     "/services/tuyauterie": {
@@ -53,7 +53,7 @@
     },
     "/contact": {
       "title": "Contact et demande de devis | S.I.M sarl, Abidjan",
-      "description": "Contactez S.I.M sarl à Koumassi, Abidjan : demande de devis, téléphone et coordonnées. Notre équipe revient vers vous rapidement."
+      "description": "Contactez S.I.M sarl (SIM sarl) à Koumassi, Abidjan, Côte d'Ivoire : demande de devis, téléphone et coordonnées. Notre équipe revient vers vous rapidement."
     }
   }
 }

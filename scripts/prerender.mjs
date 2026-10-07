@@ -21,6 +21,19 @@ const swap = (html, pattern, replacement, label) => {
 
 const urlFor = (route) => seo.origin + (route === '/' ? '/' : route + '/');
 
+// Données structurées « WebSite » : uniquement sur l'accueil, pour que Google affiche
+// « S.I.M sarl » comme nom du site (et non « simsarl.com »).
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': seo.origin + '/#website',
+  url: seo.origin + '/',
+  name: seo.siteName,
+  alternateName: ['SIM sarl', 'SIM SARL', 'Soudure Industrielle et Maritime', 'simsarl.com'],
+  inLanguage: 'fr',
+  publisher: { '@id': seo.origin + '/#organisation' },
+};
+
 const render = (route, meta) => {
   const url = urlFor(route);
   const title = escape(meta.title);
@@ -32,6 +45,10 @@ const render = (route, meta) => {
   html = swap(html, /<meta property="og:title" content="[^"]*"\s*\/?>/, `<meta property="og:title" content="${title}" />`, 'og:title');
   html = swap(html, /<meta property="og:description" content="[^"]*"\s*\/?>/, `<meta property="og:description" content="${description}" />`, 'og:description');
   html = swap(html, /<meta property="og:url" content="[^"]*"\s*\/?>/, `<meta property="og:url" content="${url}" />`, 'og:url');
+  if (route === '/') {
+    const tag = `    <script type="application/ld+json">${JSON.stringify(websiteJsonLd)}</script>\n  </head>`;
+    html = swap(html, /\s*<\/head>/, `\n${tag}`, 'head');
+  }
   return html;
 };
 
