@@ -3820,3 +3820,37 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
+
+/* Réseaux sociaux : liens cliquables */
+.social-links-link {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: inherit;
+  text-decoration: none;
+}
+.footer-socials .social-links-link {
+  gap: 0.5rem;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+.footer-socials .social-links-link:hover { background: none; }
+.social-links-link:hover .social-links-icon,
+.social-links-link:focus-visible .social-links-icon {
+  background: var(--color-accent);
+  color: #0b1e4f;
+}
+.social-links-link:hover .social-links-handle,
+.social-links-link:focus-visible .social-links-handle {
+  color: var(--color-accent);
+}
+.social-links-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+.social-links-icon { transition: background 180ms ease, color 180ms ease; }
+@media (min-width: 640px) {
+  .footer-socials { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem 1rem; }
+}

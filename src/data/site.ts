@@ -17,8 +17,10 @@ export const site = {
     country: 'Côte d’Ivoire',
   },
   socials: [
-    { name: 'Facebook', href: '#', handle: 'SIM sarl soudure industrielle et maritime' },
-    { name: 'LinkedIn', href: '#', handle: 'SIM sarl soudure industrielle et maritime' },
+    { name: 'Facebook', href: 'https://www.facebook.com/simsarlivoir/', handle: 'SIM sarl soudure industrielle et maritime' },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/146682835/', handle: 'SIM sarl soudure industrielle et maritime' },
+    { name: 'YouTube', href: 'https://www.youtube.com/@SIMSARLIVOIRE', handle: '@SIMSARLIVOIRE' },
+    { name: 'TikTok', href: 'https://www.tiktok.com/@sim.sarl', handle: '@sim.sarl' },
   ],
 };
 
