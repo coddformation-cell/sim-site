@@ -3854,3 +3854,48 @@
 @media (min-width: 640px) {
   .footer-socials { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem 1rem; }
 }
+
+/* ============ Voile de verrouillage du site ============ */
+body.is-site-locked { overflow: hidden; }
+.site-lock {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(6, 21, 59, 0.82);
+  -webkit-backdrop-filter: blur(16px) saturate(0.7);
+  backdrop-filter: blur(16px) saturate(0.7);
+}
+.site-lock-card {
+  max-width: 30rem;
+  padding: 2.25rem 2rem;
+  text-align: center;
+  background: rgba(11, 30, 79, 0.92);
+  border: 1px solid var(--color-line-strong);
+  border-radius: 8px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+.site-lock-logo {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+.site-lock-title {
+  margin: 0 0 0.75rem;
+  color: var(--color-fg-strong);
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  line-height: 1.2;
+}
+.site-lock-text {
+  margin: 0 0 1.25rem;
+  color: var(--color-muted-strong);
+  line-height: 1.6;
+}
+.site-lock-contact { margin: 0; color: var(--color-muted); font-size: 0.9rem; }
+.site-lock-contact a { color: var(--color-accent); text-decoration: underline; text-underline-offset: 3px; }

@@ -9,6 +9,7 @@ import ServiceDetail from './pages/ServiceDetail';
 import Projets from './pages/Projets';
 import RejoignezNous from './pages/RejoignezNous';
 import Contact from './pages/Contact';
+import SiteLock from './components/SiteLock';
 import useRouteMeta from './lib/useRouteMeta';
 import './App.css';
 
@@ -68,6 +69,7 @@ function AppShell() {
         </Routes>
       </main>
       <Footer />
+      <SiteLock />
     </>
   );
 }
